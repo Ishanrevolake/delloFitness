@@ -33,9 +33,9 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
             return Container(
               margin: const EdgeInsets.only(bottom: 12),
               decoration: BoxDecoration(
-                color: const Color(0xFF161616),
+                color: const Color(0xFF1E1E1E),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.white.withOpacity(0.05)),
+                border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
               ),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(16),
@@ -51,7 +51,7 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
                   width: 4,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: isRest ? Colors.white12 : const Color(0xFFCCFF00),
+                    color: isRest ? Color(0x1FFDFBD4) : const Color(0xFFDC143C),
                     borderRadius: BorderRadius.circular(2),
                   ),
                 ),
@@ -63,17 +63,17 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
                         margin: const EdgeInsets.only(left: 8),
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFCCFF00),
+                          color: const Color(0xFFDC143C),
                           borderRadius: BorderRadius.circular(4),
                         ),
-                        child: const Text('TODAY', style: TextStyle(color: Colors.black, fontSize: 8, fontWeight: FontWeight.w400)),
+                        child: const Text('TODAY', style: TextStyle(color: Colors.white, fontSize: 8, fontWeight: FontWeight.w400)),
                       ),
                   ],
                 ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(day['focus']!, style: TextStyle(color: isRest ? Colors.white24 : Colors.white60, fontSize: 12, fontWeight: FontWeight.w300)),
+                    Text(day['focus']!, style: TextStyle(color: isRest ? Color(0x3DFDFBD4) : Color(0x99FDFBD4), fontSize: 12, fontWeight: FontWeight.w300)),
                     if (!isRest) ...[
                       const SizedBox(height: 10),
                       Row(
@@ -83,8 +83,8 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(2),
                               child: LinearProgressIndicator(
                                 value: MockDataService.getWorkoutDoneCount(day['day']!) / double.parse(day['exercises']!),
-                                backgroundColor: Colors.white.withOpacity(0.05),
-                                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFCCFF00)),
+                                backgroundColor: Color(0xFFFDFBD4).withOpacity(0.05),
+                                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFDC143C)),
                                 minHeight: 2,
                               ),
                             ),
@@ -92,14 +92,14 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
                           const SizedBox(width: 12),
                           Text(
                             '${MockDataService.getWorkoutDoneCount(day['day']!)}/${day['exercises']} done',
-                            style: const TextStyle(color: Colors.white24, fontSize: 9, fontWeight: FontWeight.w300),
+                            style: const TextStyle(color: Color(0x3DFDFBD4), fontSize: 9, fontWeight: FontWeight.w300),
                           ),
                         ],
                       ),
                     ],
                   ],
                 ),
-                trailing: isRest ? null : const Icon(Icons.chevron_right, color: Colors.white10, size: 16),
+                trailing: isRest ? null : const Icon(Icons.chevron_right, color: Color(0x1AFDFBD4), size: 16),
               ),
             );
           },

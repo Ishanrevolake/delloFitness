@@ -39,7 +39,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         title: Text('${widget.category.toUpperCase()} DETAILS', 
           style: const TextStyle(fontSize: 14, letterSpacing: 1, fontWeight: FontWeight.w400)),
@@ -54,18 +54,18 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                     Container(
                       padding: const EdgeInsets.all(32),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF161616),
+                        color: const Color(0xFF1E1E1E),
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white.withOpacity(0.05)),
+                        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
                       ),
-                      child: Icon(Icons.restaurant_menu, size: 64, color: const Color(0xFFCCFF00).withOpacity(0.5)),
+                      child: Icon(Icons.restaurant_menu, size: 64, color: const Color(0xFFDC143C).withOpacity(0.5)),
                     ),
                     const SizedBox(height: 24),
                     Text(
                       _meals.isEmpty && widget.isReadOnly 
                         ? 'No meals assigned for ${widget.category}' 
                         : 'Track your ${widget.category.toLowerCase()} here',
-                      style: const TextStyle(color: Colors.white24, fontSize: 15, fontWeight: FontWeight.w300),
+                      style: const TextStyle(color: Color(0x3DFDFBD4), fontSize: 15, fontWeight: FontWeight.w300),
                     ),
                     const SizedBox(height: 32),
                     if (!widget.isReadOnly)
@@ -76,8 +76,8 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                           icon: const Icon(Icons.add, size: 18),
                           label: const Text('ADD FOOD', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 13, letterSpacing: 1)),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFCCFF00),
-                            foregroundColor: Colors.black,
+                            backgroundColor: const Color(0xFFDC143C),
+                            foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 14),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                           ),
@@ -132,21 +132,21 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [const Color(0xFFCCFF00).withOpacity(0.15), Colors.transparent],
+          colors: [const Color(0xFFDC143C).withOpacity(0.15), Colors.transparent],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: const Color(0xFFCCFF00).withOpacity(0.1)),
+        border: Border.all(color: const Color(0xFFDC143C).withOpacity(0.1)),
       ),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Meal Total', style: TextStyle(color: Colors.white54, fontSize: 14)),
+              const Text('Meal Total', style: TextStyle(color: Color(0x8AFDFBD4), fontSize: 14)),
               Text('$totalCalories kcal', 
-                style: const TextStyle(color: Color(0xFFCCFF00), fontWeight: FontWeight.w300, fontSize: 16)),
+                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300, fontSize: 16)),
             ],
           ),
           const SizedBox(height: 20),
@@ -167,29 +167,29 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
     return Column(
       children: [
         Text(value, style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
-        Text(label, style: TextStyle(color: Colors.white.withOpacity(0.2), fontSize: 11, fontWeight: FontWeight.w300)),
+        Text(label, style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.2), fontSize: 11, fontWeight: FontWeight.w300)),
       ],
     );
   }
 
   Widget _buildMealTile(Meal meal, int index) {
-    return Container(
+    final mealCard = Container(
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFFCCFF00).withOpacity(0.1),
+              color: const Color(0xFFDC143C).withOpacity(0.1),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: const Icon(Icons.fastfood, color: Color(0xFFCCFF00), size: 24),
+            child: const Icon(Icons.fastfood, color: Color(0xFFDC143C), size: 24),
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -200,7 +200,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                 const SizedBox(height: 2),
                 Text(
                   'P:${meal.protein}g C:${meal.carbs}g F:${meal.fats}g',
-                  style: const TextStyle(color: Colors.white24, fontSize: 10, fontWeight: FontWeight.w300),
+                  style: const TextStyle(color: Color(0x3DFDFBD4), fontSize: 10, fontWeight: FontWeight.w300),
                 ),
               ],
             ),
@@ -210,24 +210,37 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
             children: [
               Text(
                 '${meal.calories}',
-                style: const TextStyle(color: Color(0xFFCCFF00), fontWeight: FontWeight.w300, fontSize: 16),
+                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300, fontSize: 16),
               ),
-              const Text('kcal', style: TextStyle(color: Colors.white38, fontSize: 10)),
+              const Text('kcal', style: TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
             ],
           ),
-          const SizedBox(width: 8),
-          if (!widget.isReadOnly)
-            IconButton(
-              icon: const Icon(Icons.delete_outline, color: Colors.redAccent, size: 20),
-              onPressed: () {
-                setState(() {
-                  MockDataService.removeMeal(widget.category, index);
-                  _meals = MockDataService.getMeals(widget.category);
-                });
-              },
-            ),
         ],
       ),
+    );
+
+    if (widget.isReadOnly) return mealCard;
+
+    return Dismissible(
+      key: ValueKey('${meal.name}_${meal.calories}_$index'),
+      direction: DismissDirection.endToStart,
+      background: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.only(right: 24),
+        decoration: BoxDecoration(
+          color: Colors.redAccent.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        alignment: Alignment.centerRight,
+        child: const Icon(Icons.delete_outline, color: Colors.redAccent, size: 28),
+      ),
+      onDismissed: (direction) {
+        setState(() {
+          MockDataService.removeMeal(widget.category, index);
+          _meals = MockDataService.getMeals(widget.category);
+        });
+      },
+      child: mealCard,
     );
   }
 
@@ -236,7 +249,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       decoration: BoxDecoration(
         color: const Color(0xFF0A0A0A),
-        border: Border(top: BorderSide(color: Colors.white.withOpacity(0.05))),
+        border: Border(top: BorderSide(color: Color(0xFFFDFBD4).withOpacity(0.05))),
       ),
       child: SizedBox(
         width: double.infinity,
@@ -245,8 +258,8 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
           icon: const Icon(Icons.add),
           label: const Text('ADD ANOTHER ITEM', style: TextStyle(fontWeight: FontWeight.w400, letterSpacing: 1)),
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFFCCFF00),
-            foregroundColor: Colors.black,
+            backgroundColor: const Color(0xFFDC143C),
+            foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(vertical: 18),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           ),

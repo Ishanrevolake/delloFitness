@@ -64,14 +64,14 @@ class ClientProfileScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFF1A1A1A),
+            color: const Color(0xFF1E1E1E),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Colors.white.withOpacity(0.05)),
+            border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
           ),
-          child: Icon(icon, color: const Color(0xFFCCFF00)),
+          child: Icon(icon, color: const Color(0xFFDC143C)),
         ),
         const SizedBox(height: 8),
-        Text(label, style: const TextStyle(fontSize: 10, color: Colors.white70)),
+        Text(label, style: const TextStyle(fontSize: 10, color: Color(0xB3FDFBD4))),
       ],
     ),
   );
@@ -82,19 +82,19 @@ class ClientProfileScreen extends StatelessWidget {
       height: 220,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: const TextStyle(color: Colors.white70)),
+          Text(title, style: const TextStyle(color: Color(0xB3FDFBD4))),
           const SizedBox(height: 20),
           Expanded(
             child: LineChart(
               LineChartData(
-                gridData: FlGridData(show: true, drawVerticalLine: false, getDrawingHorizontalLine: (v) => FlLine(color: Colors.white10)),
+                gridData: FlGridData(show: true, drawVerticalLine: false, getDrawingHorizontalLine: (v) => FlLine(color: Color(0x1AFDFBD4))),
                 titlesData: FlTitlesData(show: false),
                 borderData: FlBorderData(show: false),
                 lineBarsData: [
@@ -107,9 +107,9 @@ class ClientProfileScreen extends StatelessWidget {
                       const FlSpot(4, 115),
                     ],
                     isCurved: true,
-                    color: const Color(0xFFCCFF00),
+                    color: const Color(0xFFDC143C),
                     barWidth: 4,
-                    dotData: FlDotData(show: true, getDotPainter: (p0, p1, p2, p3) => FlDotCirclePainter(color: Colors.black, strokeWidth: 2, strokeColor: const Color(0xFFCCFF00), radius: 4)),
+                    dotData: FlDotData(show: true, getDotPainter: (p0, p1, p2, p3) => FlDotCirclePainter(color: Colors.white, strokeWidth: 2, strokeColor: const Color(0xFFDC143C), radius: 4)),
                   ),
                 ],
               ),
@@ -146,19 +146,19 @@ class ClientProfileScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(label, style: const TextStyle(color: Colors.white60, fontSize: 10)),
+          Text(label, style: const TextStyle(color: Color(0x99FDFBD4), fontSize: 10)),
           const SizedBox(height: 4),
           Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
-          Text(trend, style: TextStyle(color: trend.contains('+') ? const Color(0xFFCCFF00) : Colors.white38, fontSize: 10)),
+          Text(trend, style: TextStyle(color: trend.contains('+') ? const Color(0xFFDC143C) : Color(0x61FDFBD4), fontSize: 10)),
         ],
       ),
     );
@@ -174,24 +174,24 @@ class ClientProfileScreen extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 12),
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFF1A1A1A),
+            color: const Color(0xFF1E1E1E),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
             children: [
-              const Icon(Icons.history, color: Colors.white38, size: 20),
+              const Icon(Icons.history, color: Color(0x61FDFBD4), size: 20),
               const SizedBox(width: 12),
               const Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Upper Body A', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                    Text('March 14, 2026', style: TextStyle(color: Colors.white38, fontSize: 10)),
+                    Text('March 14, 2026', style: TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
                   ],
                 ),
               ),
-              const Text('60 mins', style: TextStyle(color: Color(0xFFCCFF00), fontSize: 12)),
-              const Icon(Icons.chevron_right, color: Colors.white24),
+              const Text('60 mins', style: TextStyle(color: Color(0xFFDC143C), fontSize: 12)),
+              const Icon(Icons.chevron_right, color: Color(0x3DFDFBD4)),
             ],
           ),
         );

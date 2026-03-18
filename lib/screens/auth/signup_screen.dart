@@ -19,12 +19,12 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Color(0xFFFDFBD4)),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -35,12 +35,12 @@ class _SignupScreenState extends State<SignupScreen> {
           children: [
             const Text(
               'Create Account',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w300, color: Colors.white),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w300, color: Color(0xFFFDFBD4)),
             ),
             const SizedBox(height: 8),
             Text(
               'Start your fitness journey with us today!',
-              style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 13),
+              style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.4), fontSize: 13),
             ),
             const SizedBox(height: 40),
             _buildTextField(
@@ -82,12 +82,12 @@ class _SignupScreenState extends State<SignupScreen> {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFCCFF00),
-                    foregroundColor: Colors.black,
+                    backgroundColor: const Color(0xFFDC143C),
+                    foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     elevation: 5,
-                    shadowColor: const Color(0xFFCCFF00).withOpacity(0.3),
+                    shadowColor: const Color(0xFFDC143C).withOpacity(0.3),
                   ),
                   child: const Text(
                     'CREATE ACCOUNT',
@@ -102,7 +102,7 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 Text(
                   'Already have an account? ',
-                  style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                  style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.5)),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -110,7 +110,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   },
                   child: const Text(
                     'Sign In',
-                    style: TextStyle(color: Color(0xFFCCFF00), fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
@@ -132,23 +132,23 @@ class _SignupScreenState extends State<SignupScreen> {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: TextField(
         controller: controller,
         obscureText: isPassword && !isPasswordVisible,
-        style: const TextStyle(color: Colors.white),
+        style: const TextStyle(color: Color(0xFFFDFBD4)),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(color: Colors.white.withOpacity(0.2), fontSize: 13),
-          prefixIcon: Icon(icon, color: Colors.white.withOpacity(0.4), size: 18),
+          hintStyle: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.2), fontSize: 13),
+          prefixIcon: Icon(icon, color: Color(0xFFFDFBD4).withOpacity(0.4), size: 18),
           suffixIcon: isPassword
               ? IconButton(
                   icon: Icon(
                     isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                    color: Colors.white.withOpacity(0.4),
+                    color: Color(0xFFFDFBD4).withOpacity(0.4),
                     size: 18,
                   ),
                   onPressed: onToggleVisibility,

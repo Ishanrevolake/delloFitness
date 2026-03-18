@@ -20,8 +20,8 @@ class ClientProfileScreen extends StatelessWidget {
             const Center(
               child: CircleAvatar(
                 radius: 50,
-                backgroundColor: Color(0xFF1A1A1A),
-                child: Icon(Icons.person, size: 50, color: Color(0xFFCCFF00)),
+                backgroundColor: Color(0xFF121212),
+                child: Icon(Icons.person, size: 50, color: Color(0xFFDC143C)),
               ),
             ),
             const SizedBox(height: 16),
@@ -31,7 +31,7 @@ class ClientProfileScreen extends StatelessWidget {
             ),
             const Text(
               'Member since March 2026',
-              style: TextStyle(color: Colors.white24, fontSize: 12, fontWeight: FontWeight.w300),
+              style: TextStyle(color: Color(0x3DFDFBD4), fontSize: 12, fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 32),
             _buildProfileOption(context, Icons.person_outline, 'Personal Details'),
@@ -51,21 +51,21 @@ class ClientProfileScreen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: ListTile(
-        leading: Icon(icon, color: isDestructive ? Colors.redAccent : const Color(0xFFCCFF00)),
+        leading: Icon(icon, color: isDestructive ? Colors.redAccent : const Color(0xFFDC143C)),
         title: Text(
           title,
           style: TextStyle(
-            color: isDestructive ? Colors.redAccent : Colors.white70,
+            color: isDestructive ? Colors.redAccent : Color(0xB3FDFBD4),
             fontWeight: FontWeight.w400,
             fontSize: 14,
           ),
         ),
-        trailing: const Icon(Icons.chevron_right, color: Colors.white24, size: 20),
+        trailing: const Icon(Icons.chevron_right, color: Color(0x3DFDFBD4), size: 20),
         onTap: () {
           if (isDestructive) {
             Navigator.pushAndRemoveUntil(

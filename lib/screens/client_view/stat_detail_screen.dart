@@ -17,7 +17,7 @@ class StatDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         title: Text('${title.toUpperCase()} DETAIL',
           style: const TextStyle(fontSize: 14, letterSpacing: 1, fontWeight: FontWeight.w400)),
@@ -33,15 +33,15 @@ class StatDetailScreen extends StatelessWidget {
               const SizedBox(height: 24),
               _buildInsightCard(),
               const SizedBox(height: 32),
-              const Text('Weekly Comparison', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white70)),
+              const Text('Weekly Comparison', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xB3FDFBD4))),
               const SizedBox(height: 16),
               _buildChartPlaceholder(),
               const SizedBox(height: 32),
-              const Text('Achievements', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white70)),
+              const Text('Achievements', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xB3FDFBD4))),
               const SizedBox(height: 16),
               _buildAchievementList(),
               const SizedBox(height: 32),
-              const Text('Recent History', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white70)),
+              const Text('Recent History', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xB3FDFBD4))),
               const SizedBox(height: 16),
               _buildHistoryItem('Yesterday', value, '+2% from average'),
               _buildHistoryItem('2 days ago', value, '-1% from average'),
@@ -73,7 +73,7 @@ class StatDetailScreen extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   'Your $title is trending upwards. Keep this pace to reach your goal 3 days earlier!',
-                  style: const TextStyle(color: Colors.white70, fontSize: 12, height: 1.4),
+                  style: const TextStyle(color: Color(0xB3FDFBD4), fontSize: 12, height: 1.4),
                 ),
               ],
             ),
@@ -100,14 +100,14 @@ class StatDetailScreen extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFF1A1A1A),
+            color: const Color(0xFF1E1E1E),
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.white.withOpacity(0.05)),
+            border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
           ),
           child: Icon(icon, color: color.withOpacity(0.5), size: 20),
         ),
         const SizedBox(height: 8),
-        Text(label, style: const TextStyle(color: Colors.white38, fontSize: 10)),
+        Text(label, style: const TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
       ],
     );
   }
@@ -135,7 +135,7 @@ class StatDetailScreen extends StatelessWidget {
           ),
           Text(
             'Current $title',
-            style: TextStyle(color: Colors.white.withOpacity(0.35), fontSize: 13),
+            style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.35), fontSize: 13),
           ),
         ],
       ),
@@ -148,9 +148,9 @@ class StatDetailScreen extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFF121212),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -171,7 +171,7 @@ class StatDetailScreen extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 ['M', 'T', 'W', 'T', 'F', 'S', 'S'][index],
-                style: const TextStyle(color: Colors.white24, fontSize: 12),
+                style: const TextStyle(color: Color(0x3DFDFBD4), fontSize: 12),
               ),
             ],
           );
@@ -185,9 +185,9 @@ class StatDetailScreen extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF121212),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -196,7 +196,7 @@ class StatDetailScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(day, style: const TextStyle(fontWeight: FontWeight.bold)),
-              Text(trend, style: const TextStyle(color: Colors.white24, fontSize: 12)),
+              Text(trend, style: const TextStyle(color: Color(0x3DFDFBD4), fontSize: 12)),
             ],
           ),
           Text(val, style: TextStyle(color: color, fontWeight: FontWeight.w300, fontSize: 18)),

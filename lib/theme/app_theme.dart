@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const Color background = Color(0xFF000000);
-  static const Color surface = Color(0xFF1A1A1A);
-  static const Color primary = Color(0xFFCCFF00); // Vibrant Green
-  static const Color textBody = Colors.white;
-  static const Color textDim = Colors.white70;
+  static const Color background = Color(0xFF121212);
+  static const Color surface = Color(0xFF121212);
+  static const Color primary = Color(0xFFDC143C); // Vibrant Green
+  static const Color textBody = Color(0xFFFDFBD4);
+  static const Color textDim = Color(0xB3FDFBD4);
 
   static ThemeData get darkTheme {
     return ThemeData(

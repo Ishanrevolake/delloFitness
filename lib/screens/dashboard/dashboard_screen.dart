@@ -56,7 +56,7 @@ class DashboardScreen extends StatelessWidget {
       children: [
         Text(
           'Overview',
-          style: TextStyle(color: Colors.white.withOpacity(0.6), fontSize: 14),
+          style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.6), fontSize: 14),
         ),
         const Text(
           'Monday, March 15',
@@ -71,9 +71,9 @@ class DashboardScreen extends StatelessWidget {
       height: 200,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,9 +81,9 @@ class DashboardScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Revenue', style: TextStyle(color: Colors.white70)),
+              const Text('Revenue', style: TextStyle(color: Color(0xB3FDFBD4))),
               Text('\$${total.toStringAsFixed(0)}', 
-                style: const TextStyle(color: Color(0xFFCCFF00), fontWeight: FontWeight.bold, fontSize: 18)),
+                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.bold, fontSize: 18)),
             ],
           ),
           const SizedBox(height: 20),
@@ -102,13 +102,13 @@ class DashboardScreen extends StatelessWidget {
                       const FlSpot(6, 5),
                     ],
                     isCurved: true,
-                    color: const Color(0xFFCCFF00),
+                    color: const Color(0xFFDC143C),
                     barWidth: 4,
                     isStrokeCapRound: true,
                     dotData: FlDotData(show: false),
                     belowBarData: BarAreaData(
                       show: true,
-                      color: const Color(0xFFCCFF00).withOpacity(0.1),
+                      color: const Color(0xFFDC143C).withOpacity(0.1),
                     ),
                   ),
                 ],
@@ -134,16 +134,16 @@ class DashboardScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: const Color(0xFFCCFF00), size: 20),
+          Icon(icon, color: const Color(0xFFDC143C), size: 20),
           const SizedBox(height: 12),
-          Text(label, style: const TextStyle(color: Colors.white60, fontSize: 12)),
+          Text(label, style: const TextStyle(color: Color(0x99FDFBD4), fontSize: 12)),
           Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         ],
       ),
@@ -164,9 +164,9 @@ class DashboardScreen extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A1A1A),
+          color: const Color(0xFF1E1E1E),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.white.withOpacity(0.08)),
+          border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.08)),
         ),
         child: Column(
           children: [
@@ -175,7 +175,7 @@ class DashboardScreen extends StatelessWidget {
                 CircleAvatar(
                   radius: 24,
                   backgroundColor: const Color(0xFF333333),
-                  child: Text(client.name[0], style: const TextStyle(color: Color(0xFFCCFF00))),
+                  child: Text(client.name[0], style: const TextStyle(color: Color(0xFFDC143C))),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -183,25 +183,25 @@ class DashboardScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(client.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                      Text(client.currentProgram, style: TextStyle(color: Colors.white.withOpacity(0.5), fontSize: 12)),
+                      Text(client.currentProgram, style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.5), fontSize: 12)),
                     ],
                   ),
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFCCFF00).withOpacity(0.1),
+                    color: const Color(0xFFDC143C).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     client.dailyStatus,
-                    style: const TextStyle(color: Color(0xFFCCFF00), fontSize: 10, fontWeight: FontWeight.bold),
+                    style: const TextStyle(color: Color(0xFFDC143C), fontSize: 10, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 16),
-            const Divider(color: Colors.white10),
+            const Divider(color: Color(0x1AFDFBD4)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -209,7 +209,7 @@ class DashboardScreen extends StatelessWidget {
                 if (client.alerts.isNotEmpty)
                   _buildAlertBadge(client.alerts[0])
                 else
-                  const Text('No alerts', style: TextStyle(color: Colors.white24, fontSize: 10)),
+                  const Text('No alerts', style: TextStyle(color: Color(0x3DFDFBD4), fontSize: 10)),
               ],
             ),
           ],
@@ -222,7 +222,7 @@ class DashboardScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(color: Colors.white38, fontSize: 10)),
+        Text(label, style: const TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
         Text(value, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
       ],
     );

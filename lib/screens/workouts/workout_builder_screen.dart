@@ -49,14 +49,14 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
       height: 200,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Training Volume (Last 7 Days)', style: TextStyle(color: Colors.white70, fontSize: 13)),
+          const Text('Training Volume (Last 7 Days)', style: TextStyle(color: Color(0xB3FDFBD4), fontSize: 13)),
           const SizedBox(height: 20),
           Expanded(
             child: BarChart(
@@ -65,13 +65,13 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
                 titlesData: FlTitlesData(show: false),
                 borderData: FlBorderData(show: false),
                 barGroups: [
-                  BarChartGroupData(x: 0, barRods: [BarChartRodData(toY: 8, color: const Color(0xFFCCFF00), width: 12)]),
-                  BarChartGroupData(x: 1, barRods: [BarChartRodData(toY: 10, color: const Color(0xFFCCFF00), width: 12)]),
-                  BarChartGroupData(x: 2, barRods: [BarChartRodData(toY: 14, color: const Color(0xFFCCFF00), width: 12)]),
-                  BarChartGroupData(x: 3, barRods: [BarChartRodData(toY: 6, color: const Color(0xFFCCFF00), width: 12)]),
-                  BarChartGroupData(x: 4, barRods: [BarChartRodData(toY: 12, color: const Color(0xFFCCFF00), width: 12)]),
-                  BarChartGroupData(x: 5, barRods: [BarChartRodData(toY: 9, color: const Color(0xFFCCFF00), width: 12)]),
-                  BarChartGroupData(x: 6, barRods: [BarChartRodData(toY: 11, color: const Color(0xFFCCFF00), width: 12)]),
+                  BarChartGroupData(x: 0, barRods: [BarChartRodData(toY: 8, color: const Color(0xFF42A5F5), width: 12)]),
+                  BarChartGroupData(x: 1, barRods: [BarChartRodData(toY: 10, color: const Color(0xFF42A5F5), width: 12)]),
+                  BarChartGroupData(x: 2, barRods: [BarChartRodData(toY: 14, color: const Color(0xFF42A5F5), width: 12)]),
+                  BarChartGroupData(x: 3, barRods: [BarChartRodData(toY: 6, color: const Color(0xFF42A5F5), width: 12)]),
+                  BarChartGroupData(x: 4, barRods: [BarChartRodData(toY: 12, color: const Color(0xFF42A5F5), width: 12)]),
+                  BarChartGroupData(x: 5, barRods: [BarChartRodData(toY: 9, color: const Color(0xFF42A5F5), width: 12)]),
+                  BarChartGroupData(x: 6, barRods: [BarChartRodData(toY: 11, color: const Color(0xFF42A5F5), width: 12)]),
                 ],
               ),
             ),
@@ -85,37 +85,37 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: const Color(0xFF1A1A1A),
-        title: const Text('New Workout Day', style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF1E1E1E),
+        title: const Text('New Workout Day', style: TextStyle(color: Color(0xFFFDFBD4))),
         content: const Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
               decoration: InputDecoration(
                 labelText: 'Day Name',
-                labelStyle: TextStyle(color: Colors.white38),
-                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white10)),
+                labelStyle: TextStyle(color: Color(0x61FDFBD4)),
+                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color(0x1AFDFBD4))),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color(0xFFFDFBD4)),
             ),
             TextField(
               decoration: InputDecoration(
                 labelText: 'Focus',
-                labelStyle: TextStyle(color: Colors.white38),
-                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white10)),
+                labelStyle: TextStyle(color: Color(0x61FDFBD4)),
+                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color(0x1AFDFBD4))),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color(0xFFFDFBD4)),
             ),
           ],
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel', style: TextStyle(color: Colors.white38))),
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel', style: TextStyle(color: Color(0x61FDFBD4)))),
           TextButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Plan added')));
               Navigator.pop(context);
             },
-            child: const Text('Add', style: TextStyle(color: Color(0xFFCCFF00))),
+            child: const Text('Add', style: TextStyle(color: Color(0xFFDC143C))),
           ),
         ],
       ),
@@ -126,26 +126,26 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: const Color(0xFF1A1A1A),
-        title: Text('Edit ${day['day']}', style: const TextStyle(color: Colors.white)),
+        backgroundColor: const Color(0xFF1E1E1E),
+        title: Text('Edit ${day['day']}', style: const TextStyle(color: Color(0xFFFDFBD4))),
         content: TextField(
           decoration: InputDecoration(
             labelText: 'Update Focus',
-            labelStyle: const TextStyle(color: Colors.white38),
-            enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.white10)),
+            labelStyle: const TextStyle(color: Color(0x61FDFBD4)),
+            enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Color(0x1AFDFBD4))),
             hintText: day['focus'],
-            hintStyle: const TextStyle(color: Colors.white10),
+            hintStyle: const TextStyle(color: Color(0x1AFDFBD4)),
           ),
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: Color(0xFFFDFBD4)),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel', style: TextStyle(color: Colors.white38))),
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel', style: TextStyle(color: Color(0x61FDFBD4)))),
           TextButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Plan updated')));
               Navigator.pop(context);
             },
-            child: const Text('Update', style: TextStyle(color: Color(0xFFCCFF00))),
+            child: const Text('Update', style: TextStyle(color: Color(0xFFDC143C))),
           ),
         ],
       ),
@@ -164,15 +164,15 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
             margin: const EdgeInsets.only(right: 12),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFF1A1A1A),
+              color: const Color(0xFF1E1E1E),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.white.withOpacity(0.05)),
+              border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.description, color: Color(0xFFCCFF00), size: 18),
+                const Icon(Icons.description, color: Color(0xFFFDFBD4), size: 18),
                 const SizedBox(height: 8),
                 Text(_templates[index], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
               ],
@@ -212,9 +212,9 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
         margin: const EdgeInsets.only(bottom: 12),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A1A1A),
+          color: const Color(0xFF1E1E1E),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Colors.white.withOpacity(0.05)),
+          border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
         ),
         child: Row(
           children: [
@@ -222,7 +222,7 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
               width: 4,
               height: 40,
               decoration: BoxDecoration(
-                color: isRest ? Colors.white24 : const Color(0xFFCCFF00),
+                color: isRest ? Color(0x3DFDFBD4) : const Color(0xFF66BB6A),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -232,12 +232,12 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(day['day']!, style: const TextStyle(fontWeight: FontWeight.bold)),
-                  Text(day['focus']!, style: TextStyle(color: isRest ? Colors.white30 : Colors.white70, fontSize: 13)),
+                  Text(day['focus']!, style: TextStyle(color: isRest ? Color(0x4DFDFBD4) : Color(0xB3FDFBD4), fontSize: 13)),
                 ],
               ),
             ),
             IconButton(
-              icon: const Icon(Icons.edit, size: 18, color: Colors.white24),
+              icon: const Icon(Icons.edit, size: 18, color: Color(0x3DFDFBD4)),
               onPressed: () => _showEditDayDialog(context, day),
             ),
           ],

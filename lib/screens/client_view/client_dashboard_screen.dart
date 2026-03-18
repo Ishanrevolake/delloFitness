@@ -3,6 +3,10 @@ import '../../services/mock_data_service.dart';
 import '../../models/fitness_models.dart';
 import 'client_workout_plan_screen.dart';
 import 'stat_detail_screen.dart';
+import 'progress_report_screen.dart';
+import 'client_profile_screen.dart';
+import '../../widgets/progress_meter_widget.dart';
+import 'dart:math' as math;
 
 class ClientDashboardScreen extends StatefulWidget {
   const ClientDashboardScreen({super.key});
@@ -28,7 +32,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         title: const Text('ALFA FITNESS', 
           style: TextStyle(letterSpacing: 2, fontWeight: FontWeight.w400, fontSize: 13)),
@@ -46,10 +50,12 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
               _buildGreeting(),
               const SizedBox(height: 20),
               _buildTodaysWorkoutCard(),
-              const SizedBox(height: 24),
+              const SizedBox(height: 32),
+              _buildProgressMeterSection(),
+              const SizedBox(height: 32),
               const Padding(
                 padding: EdgeInsets.only(left: 4.0),
-                child: Text('DAILY STATS', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Colors.white38, letterSpacing: 1.5)),
+                child: Text('DAILY STATS', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Color(0x61FDFBD4), letterSpacing: 1.5)),
               ),
               const SizedBox(height: 12),
               _buildStatsGrid(),
@@ -60,14 +66,14 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
               const SizedBox(height: 24),
               const Padding(
                 padding: EdgeInsets.only(left: 4.0),
-                child: Text("COACH'S TIP", style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Colors.white38, letterSpacing: 1.5)),
+                child: Text("COACH'S TIP", style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Color(0x61FDFBD4), letterSpacing: 1.5)),
               ),
               const SizedBox(height: 12),
               _buildCoachTip(),
               const SizedBox(height: 24),
               const Padding(
                 padding: EdgeInsets.only(left: 4.0),
-                child: Text('RECENTLY COMPLETED', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Colors.white38, letterSpacing: 1.5)),
+                child: Text('RECENTLY COMPLETED', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Color(0x61FDFBD4), letterSpacing: 1.5)),
               ),
               const SizedBox(height: 12),
               _buildRecentlyCompleted(),
@@ -89,7 +95,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
             children: [
               Text(
                 'Sunday, 15 March',
-                style: TextStyle(color: Colors.white.withOpacity(0.35), fontSize: 11, fontWeight: FontWeight.w300),
+                style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.35), fontSize: 11, fontWeight: FontWeight.w300),
               ),
               const Text(
                 'Welcome, John!',
@@ -99,17 +105,64 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
             ],
           ),
         ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          margin: const EdgeInsets.only(left: 16),
-          decoration: BoxDecoration(
-            color: const Color(0xFF161616),
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Colors.white.withOpacity(0.05)),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ClientProfileScreen()));
+          },
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.only(left: 16),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1E1E1E),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+            ),
+            child: const Icon(Icons.person_outline, color: Color(0xFFDC143C), size: 18),
           ),
-          child: const Icon(Icons.person_outline, color: Color(0xFFCCFF00), size: 18),
         ),
       ],
+    );
+  }
+
+  Widget _buildProgressMeterSection() {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1E1E1E),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('OVERALL PROGRESS', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Color(0x61FDFBD4), letterSpacing: 1.5)),
+          const SizedBox(height: 24),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final maxWidth = constraints.maxWidth;
+              final meterWidth = math.min(300.0, maxWidth);
+              return Center(child: ProgressMeterWidget(width: meterWidth));
+            },
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const ProgressReportScreen()));
+              },
+              style: OutlinedButton.styleFrom(
+                side: BorderSide(color: Color(0xFFFDFBD4).withOpacity(0.1)),
+                foregroundColor: Color(0xB3FDFBD4),
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              child: const Text('VIEW ALL ANALYTICS', style: TextStyle(fontWeight: FontWeight.w400, letterSpacing: 1.0, fontSize: 12)),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -119,12 +172,12 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [const Color(0xFFCCFF00).withOpacity(0.15), Colors.transparent],
+          colors: [const Color(0xFFDC143C).withOpacity(0.15), Colors.transparent],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: const Color(0xFFCCFF00).withOpacity(0.1)),
+        border: Border.all(color: const Color(0xFFDC143C).withOpacity(0.1)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,14 +187,14 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFCCFF00),
+                  color: const Color(0xFFDC143C),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text('TODAY', 
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 10)),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400, fontSize: 10)),
               ),
               const Spacer(),
-              const Text('45-60 min', style: TextStyle(color: Colors.white38, fontSize: 12)),
+              const Text('45-60 min', style: TextStyle(color: Color(0x61FDFBD4), fontSize: 12)),
             ],
           ),
           const SizedBox(height: 16),
@@ -149,7 +202,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
           const Text('Upper Body Power', 
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
           const Text('Focus: Strength & Explosiveness', 
-            style: TextStyle(color: Colors.white38, fontSize: 11)),
+            style: TextStyle(color: Color(0x61FDFBD4), fontSize: 11)),
           const SizedBox(height: 20),
           // Progress Indicator
           Column(
@@ -158,8 +211,8 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Progress', style: TextStyle(color: Colors.white.withOpacity(0.2), fontSize: 10)),
-                  const Text('4/8 exercises', style: TextStyle(color: Color(0xFFCCFF00), fontSize: 10, fontWeight: FontWeight.w400)),
+                  Text('Progress', style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.2), fontSize: 10)),
+                  const Text('4/8 exercises', style: TextStyle(color: Color(0xFFDC143C), fontSize: 10, fontWeight: FontWeight.w400)),
                 ],
               ),
               const SizedBox(height: 8),
@@ -167,8 +220,8 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
                 borderRadius: BorderRadius.circular(4),
                 child: LinearProgressIndicator(
                   value: 0.5,
-                  backgroundColor: Colors.white.withOpacity(0.05),
-                  valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFCCFF00)),
+                  backgroundColor: Color(0xFFFDFBD4).withOpacity(0.05),
+                  valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFDC143C)),
                   minHeight: 4,
                 ),
               ),
@@ -182,8 +235,8 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const ClientWorkoutPlanScreen()));
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFCCFF00),
-                foregroundColor: Colors.black,
+                backgroundColor: const Color(0xFFDC143C),
+                foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),
@@ -208,9 +261,9 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
   Widget _buildStatCard(String title, String value, IconData icon, Color color) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF121212),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.03)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.03)),
         boxShadow: [
           BoxShadow(
             color: color.withOpacity(0.03),
@@ -245,12 +298,12 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(icon, color: color, size: 20),
-                    const Icon(Icons.arrow_forward_ios, color: Colors.white10, size: 10),
+                    const Icon(Icons.arrow_forward_ios, color: Color(0x1AFDFBD4), size: 10),
                   ],
                 ),
                 const SizedBox(height: 12),
                 Text(value, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: -0.5)),
-                Text(title, style: TextStyle(color: Colors.white.withOpacity(0.2), fontSize: 10, fontWeight: FontWeight.w300)),
+                Text(title, style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.2), fontSize: 10, fontWeight: FontWeight.w300)),
               ],
             ),
           ),
@@ -264,7 +317,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
       children: [
         Expanded(child: _buildStatCard('Sleep', '7h 45m', Icons.bedtime_outlined, Colors.deepPurpleAccent)),
         const SizedBox(width: 12),
-        Expanded(child: _buildStatCard('Active', '42 min', Icons.timer_outlined, const Color(0xFFCCFF00))),
+        Expanded(child: _buildStatCard('Active', '42 min', Icons.timer_outlined, const Color(0xFFDC143C))),
       ],
     );
   }
@@ -273,9 +326,9 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -283,9 +336,9 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Workout Streak', style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white70)),
+              const Text('Workout Streak', style: TextStyle(fontWeight: FontWeight.w400, color: Color(0xB3FDFBD4))),
               Text('${(_completionRate * 100).toInt()}%', 
-                style: const TextStyle(color: Color(0xFFCCFF00), fontWeight: FontWeight.w300)),
+                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300)),
             ],
           ),
           const SizedBox(height: 16),
@@ -300,13 +353,13 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
                     height: 32,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: isDone ? const Color(0xFFCCFF00) : Colors.transparent,
-                      border: Border.all(color: isDone ? const Color(0xFFCCFF00) : Colors.white10),
+                      color: isDone ? const Color(0xFFDC143C) : Colors.transparent,
+                      border: Border.all(color: isDone ? const Color(0xFFDC143C) : Color(0x1AFDFBD4)),
                     ),
-                    child: isDone ? const Icon(Icons.check, size: 16, color: Colors.black) : null,
+                    child: isDone ? const Icon(Icons.check, size: 16, color: Colors.white) : null,
                   ),
                   const SizedBox(height: 8),
-                  Text(day, style: const TextStyle(color: Colors.white38, fontSize: 10)),
+                  Text(day, style: const TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
                 ],
               );
             }).toList(),
@@ -320,30 +373,30 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFFCCFF00).withOpacity(0.03),
+        color: const Color(0xFFDC143C).withOpacity(0.03),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFCCFF00).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFFDC143C).withOpacity(0.05)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFFCCFF00),
+              color: const Color(0xFFDC143C),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: const Icon(Icons.lightbulb_outline, color: Colors.black, size: 24),
+            child: const Icon(Icons.lightbulb_outline, color: Colors.white, size: 24),
           ),
           const SizedBox(width: 20),
           const Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Pro Tip', style: TextStyle(color: Color(0xFFCCFF00), fontWeight: FontWeight.w400, fontSize: 11)),
+                Text('Pro Tip', style: TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w400, fontSize: 11)),
                 SizedBox(height: 4),
                 Text(
                   'Focus on eccentric control during your Lat Pulldowns today for better muscle fiber engagement.',
-                  style: TextStyle(color: Colors.white70, fontSize: 14, height: 1.4),
+                  style: TextStyle(color: Color(0xB3FDFBD4), fontSize: 14, height: 1.4),
                 ),
               ],
             ),
@@ -367,19 +420,19 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF121212),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.05),
+              color: Color(0xFFFDFBD4).withOpacity(0.05),
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.check, color: Color(0xFFCCFF00), size: 16),
+            child: const Icon(Icons.check, color: Color(0xFFDC143C), size: 16),
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -387,11 +440,11 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title, style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14)),
-                Text(subtitle, style: TextStyle(color: Colors.white.withOpacity(0.3), fontSize: 11)),
+                Text(subtitle, style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.3), fontSize: 11)),
               ],
             ),
           ),
-          Text(time, style: TextStyle(color: Colors.white.withOpacity(0.2), fontSize: 11)),
+          Text(time, style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.2), fontSize: 11)),
         ],
       ),
     );

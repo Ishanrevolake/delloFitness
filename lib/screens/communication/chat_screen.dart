@@ -43,12 +43,12 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         title: const Column(
           children: [
             Text('COACH ALEX', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            Text('Online', style: TextStyle(fontSize: 12, color: Color(0xFFCCFF00))),
+            Text('Online', style: TextStyle(fontSize: 12, color: Color(0xFFDC143C))),
           ],
         ),
         centerTitle: true,
@@ -70,7 +70,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.75),
                     decoration: BoxDecoration(
-                      color: isMe ? const Color(0xFFCCFF00) : const Color(0xFF1A1A1A),
+                      color: isMe ? const Color(0xFFDC143C) : const Color(0xFF121212),
                       borderRadius: BorderRadius.only(
                         topLeft: const Radius.circular(16),
                         topRight: const Radius.circular(16),
@@ -84,7 +84,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         Text(
                           msg['text'],
                           style: TextStyle(
-                            color: isMe ? Colors.black : Colors.white,
+                            color: isMe ? Colors.white : Color(0xFFFDFBD4),
                             fontSize: 15,
                           ),
                         ),
@@ -92,7 +92,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         Text(
                           msg['time'],
                           style: TextStyle(
-                            color: isMe ? Colors.black.withOpacity(0.5) : Colors.white.withOpacity(0.3),
+                            color: isMe ? Color(0xFF121212).withOpacity(0.5) : Color(0xFFFDFBD4).withOpacity(0.3),
                             fontSize: 10,
                           ),
                         ),
@@ -114,7 +114,7 @@ class _ChatScreenState extends State<ChatScreen> {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       decoration: BoxDecoration(
         color: const Color(0xFF0A0A0A),
-        border: Border(top: BorderSide(color: Colors.white.withOpacity(0.05))),
+        border: Border(top: BorderSide(color: Color(0xFFFDFBD4).withOpacity(0.05))),
       ),
       child: Row(
         children: [
@@ -122,15 +122,15 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                color: const Color(0xFF1A1A1A),
+                color: const Color(0xFF1E1E1E),
                 borderRadius: BorderRadius.circular(24),
               ),
               child: TextField(
                 controller: _messageController,
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(color: Color(0xFFFDFBD4)),
                 decoration: InputDecoration(
                   hintText: 'Type a message...',
-                  hintStyle: TextStyle(color: Colors.white.withOpacity(0.3)),
+                  hintStyle: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.3)),
                   border: InputBorder.none,
                 ),
               ),
@@ -142,10 +142,10 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: const BoxDecoration(
-                color: Color(0xFFCCFF00),
+                color: Color(0xFFDC143C),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.send, color: Colors.black, size: 20),
+              child: const Icon(Icons.send, color: Colors.white, size: 20),
             ),
           ),
         ],

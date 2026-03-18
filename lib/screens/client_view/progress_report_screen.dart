@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import '../../widgets/progress_meter_widget.dart';
 
 class ProgressReportScreen extends StatelessWidget {
   const ProgressReportScreen({super.key});
@@ -7,7 +8,7 @@ class ProgressReportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         title: const Text('PROGRESS REPORT', 
           style: TextStyle(letterSpacing: 2, fontWeight: FontWeight.w400, fontSize: 14)),
@@ -23,7 +24,7 @@ class ProgressReportScreen extends StatelessWidget {
               padding: const EdgeInsets.all(24),
               child: Column(
                 children: [
-                  _buildProgressMeter(meterWidth),
+                  ProgressMeterWidget(width: meterWidth),
                   const SizedBox(height: 48),
                   _buildSectionHeader('Monthly Adherence'),
                   const SizedBox(height: 16),
@@ -53,43 +54,10 @@ class ProgressReportScreen extends StatelessWidget {
         style: const TextStyle(
           fontSize: 12, 
           letterSpacing: 1.5, 
-          color: Colors.white38, 
+          color: Color(0x61FDFBD4), 
           fontWeight: FontWeight.w400
         ),
       ),
-    );
-  }
-
-  Widget _buildProgressMeter(double width) {
-    return Column(
-      children: [
-        SizedBox(
-          height: width * 0.6,
-          width: width,
-          child: CustomPaint(
-            painter: _MeterPainter(progress: 0.85), // Optimal level
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('OPTIMAL', 
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w300, letterSpacing: 4, color: Color(0xFFCCFF00))),
-                SizedBox(height: 8),
-                Text('Current Level', 
-                  style: TextStyle(color: Colors.white24, fontSize: 12, fontWeight: FontWeight.w300)),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(height: 24),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _MeterLevel(label: 'Off-Track', color: Colors.red),
-            _MeterLevel(label: 'Good', color: Colors.orange),
-            _MeterLevel(label: 'Optimal', color: Color(0xFFCCFF00)),
-          ],
-        ),
-      ],
     );
   }
 
@@ -97,14 +65,14 @@ class ProgressReportScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF121212),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.03)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.03)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _buildCircleProgress('Workouts', 0.92, const Color(0xFFCCFF00)),
+          _buildCircleProgress('Workouts', 0.92, const Color(0xFFDC143C)),
           _buildCircleProgress('Nutrition', 0.85, const Color(0xFF42A5F5)),
           _buildCircleProgress('Sleep', 0.78, Colors.deepPurpleAccent),
         ],
@@ -126,8 +94,8 @@ class ProgressReportScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        Text(label, style: const TextStyle(fontSize: 11, color: Colors.white54)),
-        Text('${(value * 100).toInt()}%', style: const TextStyle(fontSize: 13, color: Colors.white70)),
+        Text(label, style: const TextStyle(fontSize: 11, color: Color(0x8AFDFBD4))),
+        Text('${(value * 100).toInt()}%', style: const TextStyle(fontSize: 13, color: Color(0xB3FDFBD4))),
       ],
     );
   }
@@ -153,22 +121,22 @@ class ProgressReportScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF121212),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white.withOpacity(0.03)),
+        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.03)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(label, style: const TextStyle(color: Colors.white38, fontSize: 10)),
+          Text(label, style: const TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
           const SizedBox(height: 4),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(child: Text(val, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400), overflow: TextOverflow.ellipsis)),
               const SizedBox(width: 4),
-              Text(trend, style: const TextStyle(color: Color(0xFFCCFF00), fontSize: 8)),
+              Text(trend, style: const TextStyle(color: Color(0xFFDC143C), fontSize: 8)),
             ],
           ),
         ],
@@ -191,7 +159,7 @@ class ProgressReportScreen extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF121212),
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -200,8 +168,8 @@ class ProgressReportScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(fontSize: 13, color: Colors.white70)),
-                Text(status, style: const TextStyle(fontSize: 11, color: Colors.white24)),
+                Text(title, style: const TextStyle(fontSize: 13, color: Color(0xB3FDFBD4))),
+                Text(status, style: const TextStyle(fontSize: 11, color: Color(0x3DFDFBD4))),
               ],
             ),
           ),
@@ -212,95 +180,13 @@ class ProgressReportScreen extends StatelessWidget {
               child: LinearProgressIndicator(
                 value: progress,
                 minHeight: 2,
-                backgroundColor: Colors.white.withOpacity(0.03),
-                color: const Color(0xFFCCFF00).withOpacity(0.5),
+                backgroundColor: Color(0xFFFDFBD4).withOpacity(0.03),
+                color: const Color(0xFFDC143C).withOpacity(0.5),
               ),
             ),
           ),
         ],
       ),
-    );
-  }
-}
-
-class _MeterPainter extends CustomPainter {
-  final double progress;
-  _MeterPainter({required this.progress});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height);
-    final radius = size.width / 2;
-    
-    final paint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 4
-      ..strokeCap = StrokeCap.round;
-
-    // Background track
-    paint.color = Colors.white.withOpacity(0.05);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      math.pi,
-      math.pi,
-      false,
-      paint,
-    );
-
-    // Levels indicators (thin lines)
-    final markerPaint = Paint()
-      ..color = Colors.white10
-      ..strokeWidth = 1;
-    
-    for (int i = 0; i <= 4; i++) {
-      final angle = math.pi + (i * math.pi / 4);
-      final start = Offset(
-        center.dx + (radius - 10) * math.cos(angle),
-        center.dy + (radius - 10) * math.sin(angle),
-      );
-      final end = Offset(
-        center.dx + radius * math.cos(angle),
-        center.dy + radius * math.sin(angle),
-      );
-      canvas.drawLine(start, end, markerPaint);
-    }
-
-    // Active progress
-    paint.color = const Color(0xFFCCFF00);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      math.pi,
-      math.pi * progress,
-      false,
-      paint,
-    );
-
-    // Glow
-    final glowPaint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 8
-      ..color = const Color(0xFFCCFF00).withOpacity(0.1)
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
-    canvas.drawArc(Rect.fromCircle(center: center, radius: radius), math.pi, math.pi * progress, false, glowPaint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
-}
-
-class _MeterLevel extends StatelessWidget {
-  final String label;
-  final Color color;
-  const _MeterLevel({required this.label, required this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(width: 8, height: 2, decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(2))),
-        const SizedBox(width: 8),
-        Text(label, style: const TextStyle(fontSize: 10, color: Colors.white24, fontWeight: FontWeight.w300)),
-      ],
     );
   }
 }

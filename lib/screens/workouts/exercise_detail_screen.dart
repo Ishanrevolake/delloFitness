@@ -47,7 +47,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         title: Text(widget.exercise.name.toUpperCase(), 
           style: const TextStyle(letterSpacing: 1.5, fontSize: 14, fontWeight: FontWeight.w400)),
@@ -72,7 +72,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                   const SizedBox(height: 8),
                   const Text(
                     'Keep shoulders loose and grip intact. Focus on the squeeze at the bottom of the movement.',
-                    style: TextStyle(color: Colors.white54, fontSize: 14),
+                    style: TextStyle(color: Color(0x8AFDFBD4), fontSize: 14),
                   ),
                   const SizedBox(height: 32),
                   ..._sets.map((set) => _buildSetCard(set)).toList(),
@@ -93,10 +93,10 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
       child: YoutubePlayer(
         controller: _controller,
         showVideoProgressIndicator: true,
-        progressIndicatorColor: const Color(0xFFCCFF00),
+        progressIndicatorColor: const Color(0xFF66BB6A),
         progressColors: const ProgressBarColors(
-          playedColor: Color(0xFFCCFF00),
-          handleColor: Color(0xFFCCFF00),
+          playedColor: Color(0xFF66BB6A),
+          handleColor: Color(0xFF66BB6A),
         ),
       ),
     );
@@ -108,10 +108,10 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDone ? const Color(0xFFCCFF00).withOpacity(0.05) : const Color(0xFF1A1A1A),
+        color: isDone ? const Color(0xFF66BB6A).withOpacity(0.05) : const Color(0xFF121212),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isDone ? const Color(0xFFCCFF00).withOpacity(0.3) : Colors.white.withOpacity(0.05)
+          color: isDone ? const Color(0xFF66BB6A).withOpacity(0.3) : Color(0xFFFDFBD4).withOpacity(0.05)
         ),
       ),
       child: Column(
@@ -120,24 +120,24 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             children: [
               Text('SET 0${setData['setNum']}', 
                 style: TextStyle(
-                  color: isDone ? const Color(0xFFCCFF00) : Colors.white24, 
+                  color: isDone ? const Color(0xFF66BB6A) : Color(0x3DFDFBD4), 
                   fontWeight: FontWeight.w400,
                   fontSize: 10,
                   letterSpacing: 1,
                 )),
               const Spacer(),
               Text('${setData['reps']} REPS', 
-                style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.white70)),
+                style: const TextStyle(fontWeight: FontWeight.w400, color: Color(0xB3FDFBD4))),
               const SizedBox(width: 16),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Colors.white12),
+                  border: Border.all(color: Color(0x1FFDFBD4)),
                 ),
                 child: Text(setData['weight'], 
-                  style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 13, color: Colors.white70)),
+                  style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 13, color: Color(0xB3FDFBD4))),
               ),
             ],
           ),
@@ -151,9 +151,9 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                 });
               },
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: isDone ? Colors.transparent : const Color(0xFFCCFF00)),
-                backgroundColor: isDone ? const Color(0xFFCCFF00) : Colors.transparent,
-                foregroundColor: isDone ? Colors.black : const Color(0xFFCCFF00),
+                side: BorderSide(color: isDone ? Colors.transparent : const Color(0xFF66BB6A)),
+                backgroundColor: isDone ? const Color(0xFF66BB6A) : Colors.transparent,
+                foregroundColor: isDone ? Colors.white : const Color(0xFF66BB6A),
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),
@@ -172,7 +172,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       decoration: BoxDecoration(
         color: const Color(0xFF0A0A0A),
-        border: Border(top: BorderSide(color: Colors.white.withOpacity(0.05))),
+        border: Border(top: BorderSide(color: Color(0xFFFDFBD4).withOpacity(0.05))),
       ),
       child: SizedBox(
         width: double.infinity,
@@ -184,8 +184,8 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             Navigator.pop(context);
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: allDone ? const Color(0xFFCCFF00) : Colors.white10,
-            foregroundColor: allDone ? Colors.black : Colors.white38,
+            backgroundColor: allDone ? const Color(0xFFDC143C) : Color(0x1AFDFBD4),
+            foregroundColor: allDone ? Colors.white : Color(0x61FDFBD4),
             padding: const EdgeInsets.symmetric(vertical: 18),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           ),
