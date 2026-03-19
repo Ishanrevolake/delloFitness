@@ -8,7 +8,7 @@ class ProgressReportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         title: const Text('PROGRESS REPORT', 
           style: TextStyle(letterSpacing: 2, fontWeight: FontWeight.w400, fontSize: 14)),
@@ -54,7 +54,7 @@ class ProgressReportScreen extends StatelessWidget {
         style: const TextStyle(
           fontSize: 12, 
           letterSpacing: 1.5, 
-          color: Color(0x61FDFBD4), 
+          color: Colors.black54, 
           fontWeight: FontWeight.w400
         ),
       ),
@@ -65,9 +65,9 @@ class ProgressReportScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.03)),
+        border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,8 +94,8 @@ class ProgressReportScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        Text(label, style: const TextStyle(fontSize: 11, color: Color(0x8AFDFBD4))),
-        Text('${(value * 100).toInt()}%', style: const TextStyle(fontSize: 13, color: Color(0xB3FDFBD4))),
+        Text(label, style: const TextStyle(fontSize: 11, color: Colors.black87)),
+        Text('${(value * 100).toInt()}%', style: const TextStyle(fontSize: 13, color: Colors.black87)),
       ],
     );
   }
@@ -121,15 +121,15 @@ class ProgressReportScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.03)),
+        border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(label, style: const TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
+          Text(label, style: const TextStyle(color: Colors.black54, fontSize: 10)),
           const SizedBox(height: 4),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,7 +159,7 @@ class ProgressReportScreen extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -168,8 +168,8 @@ class ProgressReportScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(fontSize: 13, color: Color(0xB3FDFBD4))),
-                Text(status, style: const TextStyle(fontSize: 11, color: Color(0x3DFDFBD4))),
+                Text(title, style: const TextStyle(fontSize: 13, color: Colors.black87)),
+                Text(status, style: const TextStyle(fontSize: 11, color: Colors.black38)),
               ],
             ),
           ),
@@ -180,7 +180,7 @@ class ProgressReportScreen extends StatelessWidget {
               child: LinearProgressIndicator(
                 value: progress,
                 minHeight: 2,
-                backgroundColor: Color(0xFFFDFBD4).withOpacity(0.03),
+                backgroundColor: const Color(0xFFEEEEEE),
                 color: const Color(0xFFDC143C).withOpacity(0.5),
               ),
             ),

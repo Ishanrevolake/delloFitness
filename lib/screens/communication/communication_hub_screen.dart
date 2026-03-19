@@ -37,19 +37,19 @@ class CommunicationHubScreen extends StatelessWidget {
 
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: const Color(0xFF1E1E1E),
+        backgroundColor: Colors.white,
         child: Text(names[index % names.length][0], style: const TextStyle(color: Color(0xFFDC143C))),
       ),
       title: Text(names[index % names.length], style: const TextStyle(fontWeight: FontWeight.bold)),
       subtitle: Text(messages[index % messages.length], 
         maxLines: 1, 
         overflow: TextOverflow.ellipsis,
-        style: const TextStyle(color: Color(0x61FDFBD4), fontSize: 13),
+        style: const TextStyle(color: Colors.black54, fontSize: 13),
       ),
       trailing: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('12:45', style: TextStyle(color: Color(0x3DFDFBD4), fontSize: 10)),
+          const Text('12:45', style: TextStyle(color: Colors.black38, fontSize: 10)),
           if (index == 0)
             Container(
               margin: const EdgeInsets.only(top: 4),

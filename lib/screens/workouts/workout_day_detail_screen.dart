@@ -23,7 +23,7 @@ class _WorkoutDayDetailScreenState extends State<WorkoutDayDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         title: Text('${widget.dayData['day']!.toUpperCase()} - ${widget.dayData['focus']!.toUpperCase()}', 
           style: const TextStyle(fontSize: 13, letterSpacing: 1, fontWeight: FontWeight.w400)),
@@ -35,9 +35,9 @@ class _WorkoutDayDetailScreenState extends State<WorkoutDayDetailScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.fitness_center, size: 64, color: Color(0xFFFDFBD4).withOpacity(0.05)),
+                  Icon(Icons.fitness_center, size: 64, color: const Color(0xFFEEEEEE)),
                   const SizedBox(height: 16),
-                  const Text('No exercises added yet', style: TextStyle(color: Color(0x61FDFBD4))),
+                  const Text('No exercises added yet', style: TextStyle(color: Colors.black54)),
                 ],
               ),
             )
@@ -69,10 +69,10 @@ class _WorkoutDayDetailScreenState extends State<WorkoutDayDetailScreen> {
       margin: const EdgeInsets.only(bottom: 20),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: exercise.isCompleted ? const Color(0xFF66BB6A).withOpacity(0.3) : Color(0xFFFDFBD4).withOpacity(0.05)
+          color: exercise.isCompleted ? const Color(0xFF66BB6A).withOpacity(0.3) : const Color(0xFFEEEEEE)
         ),
       ),
       child: Column(
@@ -83,10 +83,10 @@ class _WorkoutDayDetailScreenState extends State<WorkoutDayDetailScreen> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: exercise.isCompleted ? const Color(0xFF66BB6A).withOpacity(0.1) : Color(0xFFFDFBD4).withOpacity(0.05),
+                  color: exercise.isCompleted ? const Color(0xFF66BB6A).withOpacity(0.1) : const Color(0xFFEEEEEE),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Icon(exerciseIcon, color: exercise.isCompleted ? const Color(0xFF66BB6A) : Color(0x8AFDFBD4), size: 24),
+                child: Icon(exerciseIcon, color: exercise.isCompleted ? const Color(0xFF66BB6A) : Colors.black87, size: 24),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -94,14 +94,14 @@ class _WorkoutDayDetailScreenState extends State<WorkoutDayDetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(exercise.name, 
-                      style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16, color: Color(0xFFFDFBD4))),
+                      style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16, color: Colors.black)),
                     const SizedBox(height: 4),
                     Text(
                       exercise.isCompleted 
                         ? 'All sets completed' 
                         : '$setsRemaining sets / $repsRemaining reps to go',
                       style: TextStyle(
-                        color: exercise.isCompleted ? const Color(0xFF66BB6A).withOpacity(0.5) : Color(0x8AFDFBD4), 
+                        color: exercise.isCompleted ? const Color(0xFF66BB6A).withOpacity(0.5) : Colors.black87, 
                         fontSize: 13
                       ),
                     ),
@@ -138,8 +138,8 @@ class _WorkoutDayDetailScreenState extends State<WorkoutDayDetailScreen> {
                 setState(() {}); // Refresh to show completed state
               },
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: exercise.isCompleted ? Color(0x3DFDFBD4) : const Color(0xFFDC143C)),
-                foregroundColor: exercise.isCompleted ? Color(0xB3FDFBD4) : const Color(0xFFDC143C),
+                side: BorderSide(color: exercise.isCompleted ? Colors.black38 : const Color(0xFFDC143C)),
+                foregroundColor: exercise.isCompleted ? Colors.black87 : const Color(0xFFDC143C),
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),

@@ -64,14 +64,14 @@ class ClientProfileScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFF1E1E1E),
+            color: Colors.white,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+            border: Border.all(color: const Color(0xFFEEEEEE)),
           ),
           child: Icon(icon, color: const Color(0xFFDC143C)),
         ),
         const SizedBox(height: 8),
-        Text(label, style: const TextStyle(fontSize: 10, color: Color(0xB3FDFBD4))),
+        Text(label, style: const TextStyle(fontSize: 10, color: Colors.black87)),
       ],
     ),
   );
@@ -82,19 +82,19 @@ class ClientProfileScreen extends StatelessWidget {
       height: 220,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: const TextStyle(color: Color(0xB3FDFBD4))),
+          Text(title, style: const TextStyle(color: Colors.black87)),
           const SizedBox(height: 20),
           Expanded(
             child: LineChart(
               LineChartData(
-                gridData: FlGridData(show: true, drawVerticalLine: false, getDrawingHorizontalLine: (v) => FlLine(color: Color(0x1AFDFBD4))),
+                gridData: FlGridData(show: true, drawVerticalLine: false, getDrawingHorizontalLine: (v) => FlLine(color: Colors.black12)),
                 titlesData: FlTitlesData(show: false),
                 borderData: FlBorderData(show: false),
                 lineBarsData: [
@@ -146,19 +146,19 @@ class ClientProfileScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(label, style: const TextStyle(color: Color(0x99FDFBD4), fontSize: 10)),
+          Text(label, style: const TextStyle(color: Colors.black87, fontSize: 10)),
           const SizedBox(height: 4),
           Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
-          Text(trend, style: TextStyle(color: trend.contains('+') ? const Color(0xFFDC143C) : Color(0x61FDFBD4), fontSize: 10)),
+          Text(trend, style: TextStyle(color: trend.contains('+') ? const Color(0xFFDC143C) : Colors.black54, fontSize: 10)),
         ],
       ),
     );
@@ -174,24 +174,24 @@ class ClientProfileScreen extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 12),
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFF1E1E1E),
+            color: Colors.white,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
             children: [
-              const Icon(Icons.history, color: Color(0x61FDFBD4), size: 20),
+              const Icon(Icons.history, color: Colors.black54, size: 20),
               const SizedBox(width: 12),
               const Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Upper Body A', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                    Text('March 14, 2026', style: TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
+                    Text('March 14, 2026', style: TextStyle(color: Colors.black54, fontSize: 10)),
                   ],
                 ),
               ),
               const Text('60 mins', style: TextStyle(color: Color(0xFFDC143C), fontSize: 12)),
-              const Icon(Icons.chevron_right, color: Color(0x3DFDFBD4)),
+              const Icon(Icons.chevron_right, color: Colors.black38),
             ],
           ),
         );

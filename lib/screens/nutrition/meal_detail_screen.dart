@@ -39,7 +39,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         title: Text('${widget.category.toUpperCase()} DETAILS', 
           style: const TextStyle(fontSize: 14, letterSpacing: 1, fontWeight: FontWeight.w400)),
@@ -54,9 +54,9 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                     Container(
                       padding: const EdgeInsets.all(32),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF1E1E1E),
+                        color: Colors.white,
                         shape: BoxShape.circle,
-                        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+                        border: Border.all(color: const Color(0xFFEEEEEE)),
                       ),
                       child: Icon(Icons.restaurant_menu, size: 64, color: const Color(0xFFDC143C).withOpacity(0.5)),
                     ),
@@ -65,7 +65,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                       _meals.isEmpty && widget.isReadOnly 
                         ? 'No meals assigned for ${widget.category}' 
                         : 'Track your ${widget.category.toLowerCase()} here',
-                      style: const TextStyle(color: Color(0x3DFDFBD4), fontSize: 15, fontWeight: FontWeight.w300),
+                      style: const TextStyle(color: Colors.black38, fontSize: 15, fontWeight: FontWeight.w300),
                     ),
                     const SizedBox(height: 32),
                     if (!widget.isReadOnly)
@@ -144,7 +144,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Meal Total', style: TextStyle(color: Color(0x8AFDFBD4), fontSize: 14)),
+              const Text('Meal Total', style: TextStyle(color: Colors.black87, fontSize: 14)),
               Text('$totalCalories kcal', 
                 style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300, fontSize: 16)),
             ],
@@ -167,7 +167,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
     return Column(
       children: [
         Text(value, style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
-        Text(label, style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.2), fontSize: 11, fontWeight: FontWeight.w300)),
+        Text(label, style: TextStyle(color: Colors.black38, fontSize: 11, fontWeight: FontWeight.w300)),
       ],
     );
   }
@@ -177,9 +177,9 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: Row(
         children: [
@@ -200,7 +200,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                 const SizedBox(height: 2),
                 Text(
                   'P:${meal.protein}g C:${meal.carbs}g F:${meal.fats}g',
-                  style: const TextStyle(color: Color(0x3DFDFBD4), fontSize: 10, fontWeight: FontWeight.w300),
+                  style: const TextStyle(color: Colors.black38, fontSize: 10, fontWeight: FontWeight.w300),
                 ),
               ],
             ),
@@ -212,7 +212,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                 '${meal.calories}',
                 style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300, fontSize: 16),
               ),
-              const Text('kcal', style: TextStyle(color: Color(0x61FDFBD4), fontSize: 10)),
+              const Text('kcal', style: TextStyle(color: Colors.black54, fontSize: 10)),
             ],
           ),
         ],
@@ -247,9 +247,9 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
   Widget _buildBottomAddButton() {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-      decoration: BoxDecoration(
-        color: const Color(0xFF0A0A0A),
-        border: Border(top: BorderSide(color: Color(0xFFFDFBD4).withOpacity(0.05))),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: Color(0xFFEEEEEE))),
       ),
       child: SizedBox(
         width: double.infinity,

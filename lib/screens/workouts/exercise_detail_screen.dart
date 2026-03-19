@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../models/fitness_models.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ExerciseDetailScreen extends StatefulWidget {
   final Exercise exercise;
@@ -27,27 +26,17 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
         'isDone': false,
       },
     );
-    _controller = YoutubePlayerController(
-      initialVideoId: widget.exercise.videoId ?? 'v770X3mAn_8',
-      flags: const YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
   }
-
-  late YoutubePlayerController _controller;
 
   @override
   void dispose() {
-    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         title: Text(widget.exercise.name.toUpperCase(), 
           style: const TextStyle(letterSpacing: 1.5, fontSize: 14, fontWeight: FontWeight.w400)),
@@ -65,14 +54,14 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildVideoPlayer(),
+                  _buildVideoPlaceholder(),
                   const SizedBox(height: 24),
                   Text(widget.exercise.name, 
                     style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w300)),
                   const SizedBox(height: 8),
                   const Text(
                     'Keep shoulders loose and grip intact. Focus on the squeeze at the bottom of the movement.',
-                    style: TextStyle(color: Color(0x8AFDFBD4), fontSize: 14),
+                    style: TextStyle(color: Colors.black87, fontSize: 14),
                   ),
                   const SizedBox(height: 32),
                   ..._sets.map((set) => _buildSetCard(set)).toList(),
@@ -87,17 +76,29 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
     ));
   }
 
-  Widget _buildVideoPlayer() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: YoutubePlayer(
-        controller: _controller,
-        showVideoProgressIndicator: true,
-        progressIndicatorColor: const Color(0xFF66BB6A),
-        progressColors: const ProgressBarColors(
-          playedColor: Color(0xFF66BB6A),
-          handleColor: Color(0xFF66BB6A),
-        ),
+  Widget _buildVideoPlaceholder() {
+    return Container(
+      width: double.infinity,
+      height: 220,
+      decoration: BoxDecoration(
+        color: const Color(0xFF1E1E1E), // Dark frame background
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 8, offset: const Offset(0, 4)),
+        ],
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          const Icon(Icons.play_circle_fill, color: Colors.white54, size: 64),
+          Positioned(
+            bottom: 16,
+            child: Text(
+              '${widget.exercise.name} Video Preview',
+              style: const TextStyle(color: Colors.white70, fontSize: 12),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -108,10 +109,10 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDone ? const Color(0xFF66BB6A).withOpacity(0.05) : const Color(0xFF121212),
+        color: isDone ? const Color(0xFF66BB6A).withOpacity(0.05) : const Color(0xFFFAFAFA),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isDone ? const Color(0xFF66BB6A).withOpacity(0.3) : Color(0xFFFDFBD4).withOpacity(0.05)
+          color: isDone ? const Color(0xFF66BB6A).withOpacity(0.3) : const Color(0xFFEEEEEE)
         ),
       ),
       child: Column(
@@ -120,24 +121,24 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             children: [
               Text('SET 0${setData['setNum']}', 
                 style: TextStyle(
-                  color: isDone ? const Color(0xFF66BB6A) : Color(0x3DFDFBD4), 
+                  color: isDone ? const Color(0xFF66BB6A) : Colors.black38, 
                   fontWeight: FontWeight.w400,
                   fontSize: 10,
                   letterSpacing: 1,
                 )),
               const Spacer(),
               Text('${setData['reps']} REPS', 
-                style: const TextStyle(fontWeight: FontWeight.w400, color: Color(0xB3FDFBD4))),
+                style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black87)),
               const SizedBox(width: 16),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Color(0x1FFDFBD4)),
+                  border: Border.all(color: Colors.black12),
                 ),
                 child: Text(setData['weight'], 
-                  style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 13, color: Color(0xB3FDFBD4))),
+                  style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 13, color: Colors.black87)),
               ),
             ],
           ),
@@ -170,9 +171,9 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
     final allDone = _sets.every((s) => s['isDone']);
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-      decoration: BoxDecoration(
-        color: const Color(0xFF0A0A0A),
-        border: Border(top: BorderSide(color: Color(0xFFFDFBD4).withOpacity(0.05))),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: Color(0xFFEEEEEE))),
       ),
       child: SizedBox(
         width: double.infinity,
@@ -184,8 +185,8 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             Navigator.pop(context);
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: allDone ? const Color(0xFFDC143C) : Color(0x1AFDFBD4),
-            foregroundColor: allDone ? Colors.white : Color(0x61FDFBD4),
+            backgroundColor: allDone ? const Color(0xFFDC143C) : Colors.black12,
+            foregroundColor: allDone ? Colors.white : Colors.black54,
             padding: const EdgeInsets.symmetric(vertical: 18),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           ),

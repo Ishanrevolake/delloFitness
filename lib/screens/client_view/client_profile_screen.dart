@@ -20,7 +20,7 @@ class ClientProfileScreen extends StatelessWidget {
             const Center(
               child: CircleAvatar(
                 radius: 50,
-                backgroundColor: Color(0xFF121212),
+                backgroundColor: const Color(0xFFFAFAFA),
                 child: Icon(Icons.person, size: 50, color: Color(0xFFDC143C)),
               ),
             ),
@@ -31,7 +31,7 @@ class ClientProfileScreen extends StatelessWidget {
             ),
             const Text(
               'Member since March 2026',
-              style: TextStyle(color: Color(0x3DFDFBD4), fontSize: 12, fontWeight: FontWeight.w300),
+              style: TextStyle(color: Colors.black38, fontSize: 12, fontWeight: FontWeight.w300),
             ),
             const SizedBox(height: 32),
             _buildProfileOption(context, Icons.person_outline, 'Personal Details'),
@@ -51,21 +51,21 @@ class ClientProfileScreen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: ListTile(
         leading: Icon(icon, color: isDestructive ? Colors.redAccent : const Color(0xFFDC143C)),
         title: Text(
           title,
           style: TextStyle(
-            color: isDestructive ? Colors.redAccent : Color(0xB3FDFBD4),
+            color: isDestructive ? Colors.redAccent : Colors.black87,
             fontWeight: FontWeight.w400,
             fontSize: 14,
           ),
         ),
-        trailing: const Icon(Icons.chevron_right, color: Color(0x3DFDFBD4), size: 20),
+        trailing: const Icon(Icons.chevron_right, color: Colors.black38, size: 20),
         onTap: () {
           if (isDestructive) {
             Navigator.pushAndRemoveUntil(

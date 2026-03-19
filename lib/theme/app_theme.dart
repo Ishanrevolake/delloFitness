@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const Color background = Color(0xFF121212);
-  static const Color surface = Color(0xFF121212);
-  static const Color primary = Color(0xFFDC143C); // Vibrant Green
-  static const Color textBody = Color(0xFFFDFBD4);
-  static const Color textDim = Color(0xB3FDFBD4);
+  static const Color background = Colors.white;
+  static const Color surface = Colors.white;
+  static const Color primary = Color(0xFFDC143C); // Red accent
+  static const Color textBody = Colors.black87;
+  static const Color textDim = Colors.black54;
 
-  static ThemeData get darkTheme {
+  static ThemeData get lightTheme {
     return ThemeData(
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
+      primaryColor: primary,
       scaffoldBackgroundColor: background,
       textTheme: GoogleFonts.interTextTheme(
-        ThemeData.dark().textTheme.copyWith(
+        ThemeData.light().textTheme.copyWith(
           displayLarge: const TextStyle(fontWeight: FontWeight.w400, letterSpacing: -0.5),
           displayMedium: const TextStyle(fontWeight: FontWeight.w400, letterSpacing: -0.5),
           displaySmall: const TextStyle(fontWeight: FontWeight.w400),
@@ -34,6 +35,7 @@ class AppTheme {
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: background,
+        foregroundColor: Colors.black, // Dark text on light app bar
         elevation: 0,
         centerTitle: false,
       ),

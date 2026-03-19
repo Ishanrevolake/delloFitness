@@ -19,12 +19,12 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Color(0xFFFDFBD4)),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -35,12 +35,12 @@ class _SignupScreenState extends State<SignupScreen> {
           children: [
             const Text(
               'Create Account',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w300, color: Color(0xFFFDFBD4)),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w300, color: Colors.black),
             ),
             const SizedBox(height: 8),
             Text(
               'Start your fitness journey with us today!',
-              style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.4), fontSize: 13),
+              style: TextStyle(color: Colors.black.withOpacity(0.4), fontSize: 13),
             ),
             const SizedBox(height: 40),
             _buildTextField(
@@ -102,7 +102,7 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 Text(
                   'Already have an account? ',
-                  style: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.5)),
+                  style: TextStyle(color: Colors.black.withOpacity(0.5)),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -132,23 +132,23 @@ class _SignupScreenState extends State<SignupScreen> {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: TextField(
         controller: controller,
         obscureText: isPassword && !isPasswordVisible,
-        style: const TextStyle(color: Color(0xFFFDFBD4)),
+        style: const TextStyle(color: Colors.black),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(color: Color(0xFFFDFBD4).withOpacity(0.2), fontSize: 13),
-          prefixIcon: Icon(icon, color: Color(0xFFFDFBD4).withOpacity(0.4), size: 18),
+          hintStyle: TextStyle(color: Colors.black38, fontSize: 13),
+          prefixIcon: Icon(icon, color: Colors.black.withOpacity(0.4), size: 18),
           suffixIcon: isPassword
               ? IconButton(
                   icon: Icon(
                     isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                    color: Color(0xFFFDFBD4).withOpacity(0.4),
+                    color: Colors.black.withOpacity(0.4),
                     size: 18,
                   ),
                   onPressed: onToggleVisibility,

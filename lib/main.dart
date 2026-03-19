@@ -23,7 +23,7 @@ class AlfaFitnessApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Alfa Fitness',
-      theme: AppTheme.darkTheme,
+      theme: AppTheme.lightTheme,
       home: const LoginScreen(),
       debugShowCheckedModeBanner: false,
     );
@@ -73,7 +73,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           border: Border(
-            top: BorderSide(color: Color(0xFFFDFBD4).withOpacity(0.05), width: 0.5),
+            top: BorderSide(color: const Color(0xFFEEEEEE), width: 0.5),
           ),
         ),
         child: BottomNavigationBar(
@@ -93,10 +93,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 const BottomNavigationBarItem(icon: Icon(Icons.restaurant_outlined), label: 'Nutrition'),
               ]
             : [
-                const BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
-                const BottomNavigationBarItem(icon: Icon(Icons.fitness_center_outlined), label: 'Workouts'),
-                const BottomNavigationBarItem(icon: Icon(Icons.restaurant_outlined), label: 'Nutrition'),
-                const BottomNavigationBarItem(icon: Icon(Icons.message_outlined), label: 'Message'),
+                const BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'DASHBOARD'),
+                const BottomNavigationBarItem(icon: Icon(Icons.fitness_center_outlined), label: 'PROGRAMS'),
+                const BottomNavigationBarItem(icon: Icon(Icons.restaurant_outlined), label: 'NUTRITION'),
+                const BottomNavigationBarItem(icon: Icon(Icons.message_outlined), label: 'INBOX'),
               ],
         ),
       ),

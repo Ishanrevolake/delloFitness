@@ -47,7 +47,7 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
       ),
@@ -61,11 +61,11 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(food['name'], style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                IconButton(icon: const Icon(Icons.close, color: Color(0x61FDFBD4)), onPressed: () => Navigator.pop(context)),
+                IconButton(icon: const Icon(Icons.close, color: Colors.black54), onPressed: () => Navigator.pop(context)),
               ],
             ),
             const SizedBox(height: 8),
-            Text('${food['kcal']} kcal per 100g', style: const TextStyle(color: Color(0x61FDFBD4))),
+            Text('${food['kcal']} kcal per 100g', style: const TextStyle(color: Colors.black54)),
             const SizedBox(height: 32),
             const Text('Amount in Grams', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFDC143C))),
             const SizedBox(height: 12),
@@ -76,9 +76,9 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
               style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               decoration: InputDecoration(
                 suffixText: 'g',
-                suffixStyle: const TextStyle(color: Color(0x61FDFBD4), fontSize: 18),
+                suffixStyle: const TextStyle(color: Colors.black54, fontSize: 18),
                 filled: true,
-                fillColor: const Color(0xFF1E1E1E),
+                fillColor: Colors.white,
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
                 contentPadding: const EdgeInsets.all(24),
               ),
@@ -120,7 +120,7 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         title: const Text('SEARCH FOOD', style: TextStyle(fontSize: 16, letterSpacing: 1, fontWeight: FontWeight.bold)),
         centerTitle: true,
@@ -133,13 +133,13 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
               controller: _searchController,
               onChanged: _filterSearch,
               autofocus: true,
-              style: const TextStyle(color: Color(0xFFFDFBD4)),
+              style: const TextStyle(color: Colors.black),
               decoration: InputDecoration(
                 hintText: 'Search foods (e.g. Chicken)',
-                hintStyle: const TextStyle(color: Color(0x3DFDFBD4)),
+                hintStyle: const TextStyle(color: Colors.black38),
                 prefixIcon: const Icon(Icons.search, color: Color(0xFFDC143C)),
                 filled: true,
-                fillColor: const Color(0xFF1E1E1E),
+                fillColor: Colors.white,
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
                 contentPadding: const EdgeInsets.all(16),
               ),
@@ -148,13 +148,13 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
           Expanded(
             child: ListView.separated(
               itemCount: _filteredFoods.length,
-              separatorBuilder: (context, index) => Divider(color: Color(0xFFFDFBD4).withOpacity(0.05), height: 1),
+              separatorBuilder: (context, index) => Divider(color: const Color(0xFFEEEEEE), height: 1),
               itemBuilder: (context, index) {
                 final food = _filteredFoods[index];
                 return ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                   title: Text(food['name'], style: const TextStyle(fontWeight: FontWeight.bold)),
-                  subtitle: Text('${food['kcal']} kcal / 100g', style: const TextStyle(color: Color(0x61FDFBD4), fontSize: 12)),
+                  subtitle: Text('${food['kcal']} kcal / 100g', style: const TextStyle(color: Colors.black54, fontSize: 12)),
                   trailing: Container(
                     decoration: BoxDecoration(
                       color: const Color(0xFFDC143C).withOpacity(0.1),

@@ -24,10 +24,10 @@ class ProgressMeterWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text('OPTIMAL', 
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w300, letterSpacing: 4, color: Color(0xFFFDFBD4))),
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w300, letterSpacing: 4, color: Colors.black)),
                 SizedBox(height: 16),
                 Text('Current Level', 
-                  style: TextStyle(color: Color(0x3DFDFBD4), fontSize: 12, fontWeight: FontWeight.w300)),
+                  style: TextStyle(color: Colors.black38, fontSize: 12, fontWeight: FontWeight.w300)),
               ],
             ),
           ),
@@ -38,7 +38,7 @@ class ProgressMeterWidget extends StatelessWidget {
           children: [
             _MeterLevel(label: 'Off-Track', color: Colors.red),
             _MeterLevel(label: 'Good', color: Colors.yellow),
-            _MeterLevel(label: 'Optimal', color: Color(0xFFFDFBD4)),
+            _MeterLevel(label: 'Optimal', color: Colors.black),
           ],
         ),
       ],
@@ -61,7 +61,7 @@ class _MeterPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     // Background track
-    paint.color = Color(0xFFFDFBD4).withOpacity(0.05);
+    paint.color = const Color(0xFFEEEEEE);
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
       math.pi,
@@ -72,7 +72,7 @@ class _MeterPainter extends CustomPainter {
 
     // Levels indicators (thin lines)
     final markerPaint = Paint()
-      ..color = Color(0x1AFDFBD4)
+      ..color = Colors.black12
       ..strokeWidth = 1;
     
     for (int i = 0; i <= 4; i++) {
@@ -89,7 +89,7 @@ class _MeterPainter extends CustomPainter {
     }
 
     // Active progress
-    paint.color = const Color(0xFFFDFBD4);
+    paint.color = Colors.black;
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
       math.pi,
@@ -102,7 +102,7 @@ class _MeterPainter extends CustomPainter {
     final glowPaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 8
-      ..color = const Color(0xFFFDFBD4).withOpacity(0.1)
+      ..color = const Color(0xFFE0E0E0)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
     canvas.drawArc(Rect.fromCircle(center: center, radius: radius), math.pi, math.pi * progress, false, glowPaint);
   }
@@ -122,7 +122,7 @@ class _MeterLevel extends StatelessWidget {
       children: [
         Container(width: 8, height: 2, decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(2))),
         const SizedBox(width: 8),
-        Text(label, style: const TextStyle(fontSize: 10, color: Color(0x3DFDFBD4), fontWeight: FontWeight.w300)),
+        Text(label, style: const TextStyle(fontSize: 10, color: Colors.black38, fontWeight: FontWeight.w300)),
       ],
     );
   }

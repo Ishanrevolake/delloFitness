@@ -46,9 +46,9 @@ class ClientMealPlanScreen extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF1E1E1E),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Color(0xFFFDFBD4).withOpacity(0.05)),
+          border: Border.all(color: const Color(0xFFEEEEEE)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +58,7 @@ class ClientMealPlanScreen extends StatelessWidget {
             const SizedBox(height: 12),
             Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             const SizedBox(height: 4),
-            const Text('View meals', style: TextStyle(color: Color(0x3DFDFBD4), fontSize: 10)),
+            const Text('View meals', style: TextStyle(color: Colors.black38, fontSize: 10)),
           ],
         ),
       ),
