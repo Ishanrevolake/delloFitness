@@ -119,9 +119,25 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
             ],
           ),
         ),
-        IconButton(
-          icon: const Icon(Icons.notifications_none_outlined, size: 24, color: Colors.white),
-          onPressed: () {},
+        Stack(
+          children: [
+            IconButton(
+              icon: const Icon(Icons.notifications_none_outlined, size: 24, color: Colors.black87),
+              onPressed: () {},
+            ),
+            Positioned(
+              right: 12,
+              top: 12,
+              child: Container(
+                width: 8,
+                height: 8,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFDC143C),
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     );

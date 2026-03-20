@@ -94,7 +94,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               ]
             : [
                 const BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'DASHBOARD'),
-                const BottomNavigationBarItem(icon: Icon(Icons.fitness_center_outlined), label: 'PROGRAMS'),
+                const BottomNavigationBarItem(icon: Icon(Icons.fitness_center_outlined), label: 'TRAINING'),
                 const BottomNavigationBarItem(icon: Icon(Icons.restaurant_outlined), label: 'NUTRITION'),
                 const BottomNavigationBarItem(icon: Icon(Icons.message_outlined), label: 'INBOX'),
               ],

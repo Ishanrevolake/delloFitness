@@ -47,7 +47,7 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         title: const Column(
           children: [
-            Text('COACH ALEX', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
+            Text('COACH LEE', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
             Text('Online', style: TextStyle(fontSize: 12, color: Color(0xFFDC143C))),
           ],
         ),
