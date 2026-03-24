@@ -67,7 +67,7 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
             const SizedBox(height: 8),
             Text('${food['kcal']} kcal per 100g', style: const TextStyle(color: Colors.black54)),
             const SizedBox(height: 32),
-            const Text('Amount in Grams', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFDC143C))),
+            const Text('Amount in Grams', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF3EB489))),
             const SizedBox(height: 12),
             TextField(
               controller: gramsController,
@@ -103,7 +103,7 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
                   Navigator.pop(context, meal); // Return meal to detail screen
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFDC143C),
+                  backgroundColor: const Color(0xFF3EB489),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 18),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -137,7 +137,7 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
               decoration: InputDecoration(
                 hintText: 'Search foods (e.g. Chicken)',
                 hintStyle: const TextStyle(color: Colors.black38),
-                prefixIcon: const Icon(Icons.search, color: Color(0xFFDC143C)),
+                prefixIcon: const Icon(Icons.search, color: Color(0xFF3EB489)),
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
@@ -157,11 +157,11 @@ class _FoodSearchScreenState extends State<FoodSearchScreen> {
                   subtitle: Text('${food['kcal']} kcal / 100g', style: const TextStyle(color: Colors.black54, fontSize: 12)),
                   trailing: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xFFDC143C).withOpacity(0.1),
+                      color: const Color(0xFF3EB489).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: IconButton(
-                      icon: const Icon(Icons.add, color: Color(0xFFDC143C)),
+                      icon: const Icon(Icons.add, color: Color(0xFF3EB489)),
                       onPressed: () => _showAmountSheet(food),
                     ),
                   ),

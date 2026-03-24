@@ -54,7 +54,7 @@ class ClientMealPlanScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: const Color(0xFFDC143C), size: 24),
+            Icon(icon, color: const Color(0xFF3EB489), size: 24),
             const SizedBox(height: 12),
             Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             const SizedBox(height: 4),

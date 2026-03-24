@@ -51,7 +51,7 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
                   width: 4,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: isRest ? Colors.black12 : const Color(0xFFDC143C),
+                    color: isRest ? Colors.black12 : const Color(0xFF3EB489),
                     borderRadius: BorderRadius.circular(2),
                   ),
                 ),
@@ -63,7 +63,7 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
                         margin: const EdgeInsets.only(left: 8),
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFDC143C),
+                          color: const Color(0xFF3EB489),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: const Text('TODAY', style: TextStyle(color: Colors.white, fontSize: 8, fontWeight: FontWeight.w400)),
@@ -84,7 +84,7 @@ class ClientWorkoutPlanScreen extends StatelessWidget {
                               child: LinearProgressIndicator(
                                 value: MockDataService.getWorkoutDoneCount(day['day']!) / double.parse(day['exercises']!),
                                 backgroundColor: const Color(0xFFEEEEEE),
-                                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFDC143C)),
+                                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF3EB489)),
                                 minHeight: 2,
                               ),
                             ),

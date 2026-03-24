@@ -115,7 +115,7 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Plan added')));
               Navigator.pop(context);
             },
-            child: const Text('Add', style: TextStyle(color: Color(0xFFDC143C))),
+            child: const Text('Add', style: TextStyle(color: Color(0xFF3EB489))),
           ),
         ],
       ),
@@ -145,7 +145,7 @@ class _WorkoutBuilderScreenState extends State<WorkoutBuilderScreen> {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Plan updated')));
               Navigator.pop(context);
             },
-            child: const Text('Update', style: TextStyle(color: Color(0xFFDC143C))),
+            child: const Text('Update', style: TextStyle(color: Color(0xFF3EB489))),
           ),
         ],
       ),

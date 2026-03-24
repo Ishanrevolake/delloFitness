@@ -58,7 +58,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                         shape: BoxShape.circle,
                         border: Border.all(color: const Color(0xFFEEEEEE)),
                       ),
-                      child: Icon(Icons.restaurant_menu, size: 64, color: const Color(0xFFDC143C).withOpacity(0.5)),
+                      child: Icon(Icons.restaurant_menu, size: 64, color: const Color(0xFF3EB489).withOpacity(0.5)),
                     ),
                     const SizedBox(height: 24),
                     Text(
@@ -76,7 +76,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                           icon: const Icon(Icons.add, size: 18),
                           label: const Text('ADD FOOD', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 13, letterSpacing: 1)),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFDC143C),
+                            backgroundColor: const Color(0xFF3EB489),
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 14),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -132,12 +132,12 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [const Color(0xFFDC143C).withOpacity(0.15), Colors.transparent],
+          colors: [const Color(0xFF3EB489).withOpacity(0.15), Colors.transparent],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: const Color(0xFFDC143C).withOpacity(0.1)),
+        border: Border.all(color: const Color(0xFF3EB489).withOpacity(0.1)),
       ),
       child: Column(
         children: [
@@ -146,7 +146,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
             children: [
               const Text('Meal Total', style: TextStyle(color: Colors.black87, fontSize: 14)),
               Text('$totalCalories kcal', 
-                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300, fontSize: 16)),
+                style: const TextStyle(color: Color(0xFF3EB489), fontWeight: FontWeight.w300, fontSize: 16)),
             ],
           ),
           const SizedBox(height: 20),
@@ -186,10 +186,10 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFFDC143C).withOpacity(0.1),
+              color: const Color(0xFF3EB489).withOpacity(0.1),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: const Icon(Icons.fastfood, color: Color(0xFFDC143C), size: 24),
+            child: const Icon(Icons.fastfood, color: Color(0xFF3EB489), size: 24),
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -210,7 +210,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
             children: [
               Text(
                 '${meal.calories}',
-                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300, fontSize: 16),
+                style: const TextStyle(color: Color(0xFF3EB489), fontWeight: FontWeight.w300, fontSize: 16),
               ),
               const Text('kcal', style: TextStyle(color: Colors.black54, fontSize: 10)),
             ],
@@ -228,11 +228,11 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
         margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.only(right: 24),
         decoration: BoxDecoration(
-          color: Colors.redAccent.withOpacity(0.2),
+          color: Color(0xFF3EB489).withOpacity(0.2),
           borderRadius: BorderRadius.circular(20),
         ),
         alignment: Alignment.centerRight,
-        child: const Icon(Icons.delete_outline, color: Colors.redAccent, size: 28),
+        child: const Icon(Icons.delete_outline, color: Color(0xFF3EB489), size: 28),
       ),
       onDismissed: (direction) {
         setState(() {
@@ -258,7 +258,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
           icon: const Icon(Icons.add),
           label: const Text('ADD ANOTHER ITEM', style: TextStyle(fontWeight: FontWeight.w400, letterSpacing: 1)),
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFFDC143C),
+            backgroundColor: const Color(0xFF3EB489),
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(vertical: 18),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

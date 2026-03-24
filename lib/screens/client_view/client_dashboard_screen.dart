@@ -99,7 +99,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
               shape: BoxShape.circle,
               border: Border.all(color: const Color(0xFFEEEEEE)),
             ),
-            child: const Icon(Icons.person_outline, color: Color(0xFFDC143C), size: 24),
+            child: const Icon(Icons.person_outline, color: Color(0xFF3EB489), size: 24),
           ),
         ),
         Expanded(
@@ -132,7 +132,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
                 width: 8,
                 height: 8,
                 decoration: const BoxDecoration(
-                  color: Color(0xFFDC143C),
+                  color: Color(0xFF3EB489),
                   shape: BoxShape.circle,
                 ),
               ),
@@ -175,7 +175,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
         headerStyle: const HeaderStyle(
           formatButtonTextStyle: TextStyle(color: Colors.white, fontSize: 12),
           formatButtonDecoration: BoxDecoration(
-            color: Color(0xFFDC143C),
+            color: Color(0xFF3EB489),
             borderRadius: BorderRadius.all(Radius.circular(12.0)),
           ),
           titleTextStyle: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
@@ -187,11 +187,11 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
           defaultTextStyle: const TextStyle(color: Colors.black87),
           weekendTextStyle: const TextStyle(color: Colors.black54),
           selectedDecoration: const BoxDecoration(
-            color: Color(0xFFDC143C),
+            color: Color(0xFF3EB489),
             shape: BoxShape.circle,
           ),
           todayDecoration: BoxDecoration(
-            color: Color(0xFFDC143C),
+            color: Color(0xFF3EB489),
             shape: BoxShape.circle,
           ),
           selectedTextStyle: const TextStyle(color: Colors.white),
@@ -426,7 +426,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
       children: [
         Expanded(child: _buildStatCard('Sleep', '7h 45m', Icons.bedtime_outlined, Colors.deepPurpleAccent)),
         const SizedBox(width: 12),
-        Expanded(child: _buildStatCard('Active', '42 min', Icons.timer_outlined, const Color(0xFFDC143C))),
+        Expanded(child: _buildStatCard('Active', '42 min', Icons.timer_outlined, const Color(0xFF3EB489))),
       ],
     );
   }
@@ -447,7 +447,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
             children: [
               const Text('Workout Streak', style: TextStyle(fontWeight: FontWeight.w400, color: Colors.black87)),
               Text('${(_completionRate * 100).toInt()}%', 
-                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w300)),
+                style: const TextStyle(color: Color(0xFF3EB489), fontWeight: FontWeight.w300)),
             ],
           ),
           const SizedBox(height: 16),
@@ -462,8 +462,8 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
                     height: 32,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: isDone ? const Color(0xFFDC143C) : Colors.transparent,
-                      border: Border.all(color: isDone ? const Color(0xFFDC143C) : Colors.black12),
+                      color: isDone ? const Color(0xFF3EB489) : Colors.transparent,
+                      border: Border.all(color: isDone ? const Color(0xFF3EB489) : Colors.black12),
                     ),
                     child: isDone ? const Icon(Icons.check, size: 16, color: Colors.white) : null,
                   ),
@@ -482,16 +482,16 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFFDC143C).withOpacity(0.03),
+        color: const Color(0xFF3EB489).withOpacity(0.03),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFDC143C).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFF3EB489).withOpacity(0.05)),
       ),
       child: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFFDC143C),
+              color: const Color(0xFF3EB489),
               borderRadius: BorderRadius.circular(16),
             ),
             child: const Icon(Icons.lightbulb_outline, color: Colors.white, size: 24),
@@ -501,7 +501,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Pro Tip', style: TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.w400, fontSize: 11)),
+                Text('Pro Tip', style: TextStyle(color: Color(0xFF3EB489), fontWeight: FontWeight.w400, fontSize: 11)),
                 SizedBox(height: 4),
                 Text(
                   'Focus on eccentric control during your Lat Pulldowns today for better muscle fiber engagement.',
@@ -541,7 +541,7 @@ class _ClientDashboardScreenState extends State<ClientDashboardScreen> {
               color: const Color(0xFFEEEEEE),
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.check, color: Color(0xFFDC143C), size: 16),
+            child: const Icon(Icons.check, color: Color(0xFF3EB489), size: 16),
           ),
           const SizedBox(width: 16),
           Expanded(

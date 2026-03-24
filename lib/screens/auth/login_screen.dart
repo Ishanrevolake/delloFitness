@@ -31,11 +31,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFDC143C),
+                    color: const Color(0xFF3EB489),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFFDC143C).withOpacity(0.2),
+                        color: const Color(0xFF3EB489).withOpacity(0.2),
                         blurRadius: 15,
                         spreadRadius: 2,
                       ),
@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 32),
               const Center(
                 child: Text(
-                  'ALFA LEE FITNESS',
+                  'PT PAUL BENTLEY',
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w300,
@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {},
                   child: const Text(
                     'Forgot Password?',
-                    style: TextStyle(color: Color(0xFFDC143C)),
+                    style: TextStyle(color: Color(0xFF3EB489)),
                   ),
                 ),
               ),
@@ -105,12 +105,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFDC143C),
+                      backgroundColor: const Color(0xFF3EB489),
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       elevation: 5,
-                      shadowColor: const Color(0xFFDC143C).withOpacity(0.3),
+                      shadowColor: const Color(0xFF3EB489).withOpacity(0.3),
                     ),
                     child: const Text(
                       'SIGN IN',
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: const Text(
                       'Sign Up',
-                      style: TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.bold),
+                      style: TextStyle(color: Color(0xFF3EB489), fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],

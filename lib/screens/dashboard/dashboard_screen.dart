@@ -83,7 +83,7 @@ class DashboardScreen extends StatelessWidget {
             children: [
               const Text('Revenue', style: TextStyle(color: Colors.black87)),
               Text('\$${total.toStringAsFixed(0)}', 
-                style: const TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.bold, fontSize: 18)),
+                style: const TextStyle(color: Color(0xFF3EB489), fontWeight: FontWeight.bold, fontSize: 18)),
             ],
           ),
           const SizedBox(height: 20),
@@ -102,13 +102,13 @@ class DashboardScreen extends StatelessWidget {
                       const FlSpot(6, 5),
                     ],
                     isCurved: true,
-                    color: const Color(0xFFDC143C),
+                    color: const Color(0xFF3EB489),
                     barWidth: 4,
                     isStrokeCapRound: true,
                     dotData: FlDotData(show: false),
                     belowBarData: BarAreaData(
                       show: true,
-                      color: const Color(0xFFDC143C).withOpacity(0.1),
+                      color: const Color(0xFF3EB489).withOpacity(0.1),
                     ),
                   ),
                 ],
@@ -141,7 +141,7 @@ class DashboardScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: const Color(0xFFDC143C), size: 20),
+          Icon(icon, color: const Color(0xFF3EB489), size: 20),
           const SizedBox(height: 12),
           Text(label, style: const TextStyle(color: Colors.black87, fontSize: 12)),
           Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
@@ -175,7 +175,7 @@ class DashboardScreen extends StatelessWidget {
                 CircleAvatar(
                   radius: 24,
                   backgroundColor: const Color(0xFF333333),
-                  child: Text(client.name[0], style: const TextStyle(color: Color(0xFFDC143C))),
+                  child: Text(client.name[0], style: const TextStyle(color: Color(0xFF3EB489))),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -190,12 +190,12 @@ class DashboardScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFDC143C).withOpacity(0.1),
+                    color: const Color(0xFF3EB489).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     client.dailyStatus,
-                    style: const TextStyle(color: Color(0xFFDC143C), fontSize: 10, fontWeight: FontWeight.bold),
+                    style: const TextStyle(color: Color(0xFF3EB489), fontSize: 10, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],

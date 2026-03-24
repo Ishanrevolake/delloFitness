@@ -11,7 +11,7 @@ class CommunicationHubScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {},
-            child: const Text('Broadcast', style: TextStyle(color: Color(0xFFDC143C))),
+            child: const Text('Broadcast', style: TextStyle(color: Color(0xFF3EB489))),
           ),
         ],
       ),
@@ -38,7 +38,7 @@ class CommunicationHubScreen extends StatelessWidget {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: Colors.white,
-        child: Text(names[index % names.length][0], style: const TextStyle(color: Color(0xFFDC143C))),
+        child: Text(names[index % names.length][0], style: const TextStyle(color: Color(0xFF3EB489))),
       ),
       title: Text(names[index % names.length], style: const TextStyle(fontWeight: FontWeight.bold)),
       subtitle: Text(messages[index % messages.length], 
@@ -54,7 +54,7 @@ class CommunicationHubScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 4),
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(color: const Color(0xFFDC143C), borderRadius: BorderRadius.circular(10)),
+              decoration: BoxDecoration(color: const Color(0xFF3EB489), borderRadius: BorderRadius.circular(10)),
               child: const Text('2', style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
             ),
         ],

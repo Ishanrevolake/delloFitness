@@ -72,7 +72,7 @@ class ProgressReportScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _buildCircleProgress('Workouts', 0.92, const Color(0xFFDC143C)),
+          _buildCircleProgress('Workouts', 0.92, const Color(0xFF3EB489)),
           _buildCircleProgress('Nutrition', 0.85, const Color(0xFF42A5F5)),
           _buildCircleProgress('Sleep', 0.78, Colors.deepPurpleAccent),
         ],
@@ -136,7 +136,7 @@ class ProgressReportScreen extends StatelessWidget {
             children: [
               Flexible(child: Text(val, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400), overflow: TextOverflow.ellipsis)),
               const SizedBox(width: 4),
-              Text(trend, style: const TextStyle(color: Color(0xFFDC143C), fontSize: 8)),
+              Text(trend, style: const TextStyle(color: Color(0xFF3EB489), fontSize: 8)),
             ],
           ),
         ],
@@ -181,7 +181,7 @@ class ProgressReportScreen extends StatelessWidget {
                 value: progress,
                 minHeight: 2,
                 backgroundColor: const Color(0xFFEEEEEE),
-                color: const Color(0xFFDC143C).withOpacity(0.5),
+                color: const Color(0xFF3EB489).withOpacity(0.5),
               ),
             ),
           ),

@@ -21,7 +21,7 @@ class ClientProfileScreen extends StatelessWidget {
               child: CircleAvatar(
                 radius: 50,
                 backgroundColor: const Color(0xFFFAFAFA),
-                child: Icon(Icons.person, size: 50, color: Color(0xFFDC143C)),
+                child: Icon(Icons.person, size: 50, color: Color(0xFF3EB489)),
               ),
             ),
             const SizedBox(height: 16),
@@ -56,11 +56,11 @@ class ClientProfileScreen extends StatelessWidget {
         border: Border.all(color: const Color(0xFFEEEEEE)),
       ),
       child: ListTile(
-        leading: Icon(icon, color: isDestructive ? Colors.redAccent : const Color(0xFFDC143C)),
+        leading: Icon(icon, color: isDestructive ? Color(0xFF3EB489) : const Color(0xFF3EB489)),
         title: Text(
           title,
           style: TextStyle(
-            color: isDestructive ? Colors.redAccent : Colors.black87,
+            color: isDestructive ? Color(0xFF3EB489) : Colors.black87,
             fontWeight: FontWeight.w400,
             fontSize: 14,
           ),

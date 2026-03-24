@@ -185,7 +185,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             Navigator.pop(context);
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: allDone ? const Color(0xFFDC143C) : Colors.black12,
+            backgroundColor: allDone ? const Color(0xFF3EB489) : Colors.black12,
             foregroundColor: allDone ? Colors.white : Colors.black54,
             padding: const EdgeInsets.symmetric(vertical: 18),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

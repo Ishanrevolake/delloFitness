@@ -47,8 +47,8 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         title: const Column(
           children: [
-            Text('COACH LEE', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
-            Text('Online', style: TextStyle(fontSize: 12, color: Color(0xFFDC143C))),
+            Text('COACH PAUL', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
+            Text('Online', style: TextStyle(fontSize: 12, color: Color(0xFF3EB489))),
           ],
         ),
         centerTitle: true,
@@ -76,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.75),
                     decoration: BoxDecoration(
-                      color: isMe ? const Color(0xFFDC143C) : const Color(0xFFFAFAFA),
+                      color: isMe ? const Color(0xFF3EB489) : const Color(0xFFFAFAFA),
                       borderRadius: BorderRadius.only(
                         topLeft: const Radius.circular(16),
                         topRight: const Radius.circular(16),
@@ -153,7 +153,7 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: const BoxDecoration(
-                color: Color(0xFFDC143C),
+                color: Color(0xFF3EB489),
                 shape: BoxShape.circle,
               ),
               child: const Icon(Icons.send, color: Colors.white, size: 20),

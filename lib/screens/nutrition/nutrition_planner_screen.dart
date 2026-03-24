@@ -214,11 +214,11 @@ class _NutritionPlannerScreenState extends State<NutritionPlannerScreen> {
           defaultTextStyle: const TextStyle(color: Colors.black87),
           weekendTextStyle: const TextStyle(color: Colors.black54),
           selectedDecoration: const BoxDecoration(
-            color: Color(0xFFDC143C),
+            color: Color(0xFF3EB489),
             shape: BoxShape.circle,
           ),
           todayDecoration: BoxDecoration(
-            color: const Color(0xFFDC143C).withOpacity(0.5),
+            color: const Color(0xFF3EB489).withOpacity(0.5),
             shape: BoxShape.circle,
           ),
         ),
@@ -456,13 +456,13 @@ class _NutritionPlannerScreenState extends State<NutritionPlannerScreen> {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFFDC143C).withOpacity(0.03),
+        color: const Color(0xFF3EB489).withOpacity(0.03),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFDC143C).withOpacity(0.05)),
+        border: Border.all(color: const Color(0xFF3EB489).withOpacity(0.05)),
       ),
       child: const Row(
         children: [
-          Icon(Icons.lightbulb_outline, color: Color(0xFFDC143C), size: 20),
+          Icon(Icons.lightbulb_outline, color: Color(0xFF3EB489), size: 20),
           const SizedBox(width: 16),
           Expanded(
             child: Text(

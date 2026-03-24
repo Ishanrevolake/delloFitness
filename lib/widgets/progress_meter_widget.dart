@@ -36,7 +36,7 @@ class ProgressMeterWidget extends StatelessWidget {
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _MeterLevel(label: 'Off-Track', color: Colors.red),
+            _MeterLevel(label: 'Off-Track', color: Color(0xFF3EB489)),
             _MeterLevel(label: 'Good', color: Colors.yellow),
             _MeterLevel(label: 'Optimal', color: Colors.black),
           ],

@@ -138,8 +138,8 @@ class _WorkoutDayDetailScreenState extends State<WorkoutDayDetailScreen> {
                 setState(() {}); // Refresh to show completed state
               },
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: exercise.isCompleted ? Colors.black38 : const Color(0xFFDC143C)),
-                foregroundColor: exercise.isCompleted ? Colors.black87 : const Color(0xFFDC143C),
+                side: BorderSide(color: exercise.isCompleted ? Colors.black38 : const Color(0xFF3EB489)),
+                foregroundColor: exercise.isCompleted ? Colors.black87 : const Color(0xFF3EB489),
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),

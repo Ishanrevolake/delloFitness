@@ -82,12 +82,12 @@ class _SignupScreenState extends State<SignupScreen> {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFDC143C),
+                    backgroundColor: const Color(0xFF3EB489),
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     elevation: 5,
-                    shadowColor: const Color(0xFFDC143C).withOpacity(0.3),
+                    shadowColor: const Color(0xFF3EB489).withOpacity(0.3),
                   ),
                   child: const Text(
                     'CREATE ACCOUNT',
@@ -110,7 +110,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   },
                   child: const Text(
                     'Sign In',
-                    style: TextStyle(color: Color(0xFFDC143C), fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Color(0xFF3EB489), fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
